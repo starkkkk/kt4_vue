@@ -1,0 +1,58 @@
+{
+  "id": "1349317",
+  "name": "物联网",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5262901",
+      "name": "彩色-箭头-向右-1",
+      "font_class": "cs-jt-xy-1-1",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "15885737",
+      "name": "箭头",
+      "font_class": "jiantou",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "3522977",
+      "name": "医疗保障",
+      "font_class": "yiliaobaozhang",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "7878349",
+      "name": "医疗",
+      "font_class": "yiliao1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "9160983",
+      "name": "医疗服务",
+      "font_class": "yiliaofuwu",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "9383603",
+      "name": "医疗-红",
+      "font_class": "yiliao-hong",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "9586290",
+      "name": "医疗-94",
+      "font_class": "yiliao-",
+      "unicode": "e6c8",
+      "unicode_decimal": 59080
+    }
+  ]
+}

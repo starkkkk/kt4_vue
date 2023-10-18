@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/kt4_vue.iml" filepath="$PROJECT_DIR$/.idea/kt4_vue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/KT4.iml" filepath="$PROJECT_DIR$/.idea/KT4.iml" />
     </modules>
   </component>
 </project>

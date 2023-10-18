@@ -53,6 +53,7 @@ module.exports = {
   transpileDependencies,
   devServer: {
     host: '0.0.0.0',
+    disableHostCheck: true,
     hot: true,
     port: devPort,
     open: true,

@@ -21,25 +21,44 @@
                 <!--功能描述-->
                   <div class="lodash-content">
                     <h2>功能描述</h2>
-                     <span style="font-size: 18px; line-height: 30px">
-                      实现群体行为中的关键个体发现技术。通过个体时序关联行为统一表征功能，并在行为挖掘的基础上支持个体开放意图的分析与抽取。
-                      在此基础上定位核心用户和群体行为煽动者。
-                    </span>
+                     <p style="font-size: 18px; line-height: 30px;display:block;text-indent:2em">
+                      实现群体行为中的关键个体发现。首先，对参与事件的用户进行身份类型划分，依据用户在社交平台上的发言利用文本摘要技术结合其身份类型归纳其开放意图
+                      接着，由用户交互行为影响力研判挖掘关键人物，依据其表达类型结合其开放意图筛选出代表性发言。另外，由发现的事件结合用户参与度进一步提炼话题，确定不同用户关注的话题。
+                      最后，对于每个热议话题，结合用户发言具体分析参与用户关于话题的情感倾向，在此基础上发现重点煽动者并总结其煽动意图。
+                     </p>
 
                   </div>
+              <h2>数据集介绍</h2>
+              <p style="font-size: 18px; line-height: 30px;display:block;text-indent:2em">
+                2022年8月2日，美国国会众议长南希·佩洛西窜访中国台湾地区，中方对此强烈谴责、坚决反对；同时，全球多国政府及国际组织发表声明，表示坚持一个中国原则，反对美方侵害中国主权和领土完整的行径。
+                2022年8月2日晚开始，中国人民解放军东部战区陆续在台岛周边开展一系列联合军事行动，在台岛北部、西南、东南海空域进行联合海空演训，将在台湾海峡进行远程火力实弹射击，在台岛东部海域组织常导火力试射。
+                8月4日12时至7日12时，解放军重要军事演训行动进行，并组织实弹射击。8月5日，外交部发言人宣布中方对美国国会众议长佩洛西实施制裁。佩洛西访台事件在国际上引起巨大政治争议，造成舆论倾向分化，互联网上激进分子以及别有用心之人
+                    在此基础上大做文章，引导公众情绪，可能引发紧张局势和外交争端。本项目采集社交媒体上关于佩洛西访台事件的相关微博，并在此基础上进行关键个体发现，进而对舆情事件进行把控，防止危害地区稳定事件从网络上萌芽。
+              </p>
+              </el-col>
+<!--               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+               <div >
+                <h2>验证方法分析</h2>
+                  <span style="font-size: 18px; line-height: 30px">
+                    项目在真实采集的社交平台舆情专题数据集上进行实验，验证所提出的群体行为中关键个体发现技术抽取个体开放意图以及定位核心人物和群体行为煽动者的效果。
+                    具体地，项目首先采用基于微博内容分析的事件聚类模型将舆情专题数据集划分为细粒度的群体事件。其次，基于微博内容分析抽取个体开放意图，并通过与基于专家知识得到的标签进行对比，验证开放意图抽取的准确率。进一步地，项目基于微博传播热度和传播结构分析，计算群体事件中的
+                    核心人物排序，并于基于专家知识和微博平台话题贡献度排行得到的核心人物进行对比，计算核心人物定位准确率。最后，项目结合用户参与程度和开放意图极性分析，计算群体事件中的群体行为煽动者排序，并于基于专家知识得到的群体行为煽动者进行对比，计算群体行为煽动者定位准确率。
+                    <br><br>
+                  </span>
+              </div> 
               </el-col>
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <h2>
                   关键个体发现整体研究框架
                 </h2>
-              </el-col>
-              <el-col>
+              </el-col> -->
+<!--               <el-col>
                 <div style="text-align: center;">
                   <span>
                     <img src="../figure/framework_keyuser.png" width="700" height="377">
                   </span>
                 </div>
-              </el-col>
+              </el-col> -->
 <!--              <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">-->
 <!--              <h2>事件发现</h2>-->
 <!--              <span style="font-size: 18px; line-height: 30px">-->
@@ -278,542 +297,424 @@
 <!--                   </template>-->
 <!--              </el-col>-->
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                <h2>
+                  多通道融合的个体开放意图抽取
+                </h2>
+                <div style="font-size: 18px; line-height: 30px;display:block;text-indent:2em">
+                  <p >
+                  参与到舆情事件的用户群体中包含多种身份类型，存在不同的言说视角与利益诉求，这使得用户群体在舆论中的话语实践与框架使用可能是一个动态构建的过程。针对一般舆情，我们将身份类型划分为如下几种：新闻媒体、行业精英、原创博主、政府机构、商业机构等。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">新闻媒体</span>：该部分用户涵盖主流媒体、网络媒体等。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">行业精英</span>：此用户类型指的是各行各业有深入研究的精英，涉及教师、学者、律师、作家等知识精英，企业高管等经济精英，明星、导演等娱乐精英等。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">原创博主</span>：此类用户没有明确的领域技能，但他们是社交平台上的优质视频博主、原创内容博主，同样有着不容忽视的公众影响力。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">政府机构</span>：涵盖了各国各地各类型政府单位的唯一对外信息通报账号
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">商业机构</span>：涉及到各行各业公司企业等官方账号，此类型账号往往表达了企业整体的观点立场
+                  </p>
+                </div>
+                
+
+                  <label for="scene">选择用户类型</label>
+                  <el-select id="scene" v-model="selectedUser" @change="displayTable" >
+                    <el-option value="请选择类型">请选择类型</el-option>
+                    <el-option value="新闻媒体">新闻媒体</el-option>
+                    <el-option value="行业精英">行业精英</el-option>
+                    <el-option value="原创博主">原创博主</el-option>
+                  </el-select>
+                  <template v-if="selectedUser === '请选择类型'" >
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableUserData_all" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=170 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column2" label="微博" header-align="center" align="center" width=150></el-table-column> -->
+                        <el-table-column prop="column3,column8" label="Twitter" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Twitter</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column8" target="_blank" class="buttonText">{{scope.row.column3}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4,column9" label="Facebook" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Facebook</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column9" target="_blank" class="buttonText">{{scope.row.column4}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column5 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column5 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column5 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column6" label="用户介绍" header-align="center" align="center" width=250>
+                          <template slot="header">
+                            <b>用户介绍</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column7" label="核心观点" header-align="center">
+                          <template slot="header">
+                            <b>核心观点</b>
+                          </template>
+                        </el-table-column>
+                      </el-table>
+                    </el-col>
+                  </template>
+                  <template v-if="selectedUser === '新闻媒体'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableUserData_media" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=170 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <!-- <el-table-column prop="column2" label="微博" header-align="center" align="center" width=150></el-table-column> -->
+                        <el-table-column prop="column3,column7" label="Twitter" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Twitter</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column7" target="_blank" class="buttonText">{{scope.row.column3}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4,column8" label="Facebook" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Facebook</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column8" target="_blank" class="buttonText">{{scope.row.column4}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="用户介绍" header-align="center" align="center" width=250>
+                          <template slot="header">
+                            <b>用户介绍</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column6" label="核心观点" header-align="center">
+                          <template slot="header">
+                            <b>核心观点</b>
+                          </template>
+                        </el-table-column>
+                      </el-table>
+                    </el-col>
+                  </template>
+                  <template v-if="selectedUser === '行业精英'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableUserData_vip" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=170 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <!-- <el-table-column prop="column2" label="微博" header-align="center" align="center" width=150></el-table-column> -->
+                        <el-table-column prop="column3,column7" label="Twitter" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Twitter</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column7" target="_blank" class="buttonText">{{scope.row.column3}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4,column8" label="Facebook" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Facebook</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column8" target="_blank" class="buttonText">{{scope.row.column4}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="用户介绍" header-align="center" align="center" width=250>
+                          <template slot="header">
+                            <b>用户介绍</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column6" label="核心观点" header-align="center">
+                          <template slot="header">
+                            <b>核心观点</b>
+                          </template>
+                        </el-table-column>
+                      </el-table>
+                    </el-col>
+                  </template>
+                  <template v-if="selectedUser === '原创博主'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableUserData_common" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=170 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <!-- <el-table-column prop="column2" label="微博" header-align="center" align="center" width=150></el-table-column> -->
+                        <el-table-column prop="column3,column7" label="Twitter" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Twitter</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column7" target="_blank" class="buttonText">{{scope.row.column3}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4,column8" label="Facebook" header-align="center" align="center" width=150>
+                          <template slot="header">
+                            <b>Facebook</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column8" target="_blank" class="buttonText">{{scope.row.column4}}</a>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="用户介绍" header-align="center" align="center" width=250>
+                          <template slot="header">
+                            <b>用户介绍</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column6" label="核心观点" header-align="center">
+                          <template slot="header">
+                            <b>核心观点</b>
+                          </template>
+                        </el-table-column>
+                      </el-table>
+                    </el-col>
+                  </template>
+              </el-col>
+              <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
               <div >
                 <h2>核心人物定位</h2>
-                  <span style="font-size: 18px; line-height: 30px">
-                  </span>
-                  <label for="scene">选择事件：</label>
-                  <el-select id="scene" v-model="selectedScene2" @change="displayTable">
-                    <el-option value="请选择事件">请选择事件</el-option>
-                    <el-option value="佩洛西窜访台湾六宗罪">佩洛西窜访台湾六宗罪</el-option>
-                    <el-option value="外交部回应佩洛西或今晚抵达台湾">外交部回应佩洛西或今晚抵达台湾</el-option>
-                    <el-option value="解放军全程跟踪迫使佩洛西专机绕道菲律宾">解放军全程跟踪迫使佩洛西专机绕道菲律宾</el-option>
-                    <el-option value="拜登回应佩洛西窜台">拜登回应佩洛西窜台</el-option>
-                    <el-option value="国台办回应蔡英文为佩洛西授勋">国台办回应蔡英文为佩洛西授勋</el-option>
-                    <el-option value="国防部回应取消中美两军三项交往活动">国防部回应取消中美两军三项交往活动</el-option>
-                    <el-option value="美国游说公司借佩洛西窜台赚黑金">美国游说公司借佩洛西窜台赚黑金</el-option>
-                    <el-option value="解放军空军苏-35战机穿越台湾海峡">解放军空军苏-35战机穿越台湾海峡</el-option>
-                    <el-option value="中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神">中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神</el-option>
-                    <el-option value="若佩洛西敢去台湾那我们拭目以待">若佩洛西敢去台湾那我们拭目以待</el-option>
-                    <el-option value="东部战区组织环台岛战备警巡">东部战区组织环台岛战备警巡</el-option>
-                    <el-option value="美官方忧中国对佩洛西访台设禁飞区">美官方忧中国对佩洛西访台设禁飞区</el-option>
-                    <el-option value="解放军在台岛以东设靶逼退里根号">解放军在台岛以东设靶逼退里根号</el-option>
-<!--                    <el-option value="践行二十大 青春心向党">践行二十大 青春心向党</el-option>-->
-                    <el-option value="特朗普称佩洛西窜台是在帮中国圆梦">特朗普称佩洛西窜台是在帮中国圆梦</el-option>
-                    <el-option value="台海局势观察">台海局势观察</el-option>
-                    <el-option value="华春莹称中国身后是160多个国家">华春莹称中国身后是160多个国家</el-option>
-                    <el-option value="佩洛西丈夫在港公司或被列入国家制裁">佩洛西丈夫在港公司或被列入国家制裁</el-option>
-                    <el-option value="武统">武统</el-option>
-                    <el-option value="佩洛西访台纯粹是针对中国的挑衅">佩洛西访台纯粹是针对中国的挑衅</el-option>
-                    <el-option value="佩洛西到哪了">佩洛西到哪了</el-option>
-                    <el-option value="外交部回应佩洛西最新涉台言论">外交部回应佩洛西最新涉台言论</el-option>
-                    <el-option value="台湾网友吐槽台当局赢了嘴炮苦了人民">台湾网友吐槽台当局赢了嘴炮苦了人民</el-option>
-                    <el-option value="王毅称佩洛西窜台是彻头彻尾的政治闹剧">王毅称佩洛西窜台是彻头彻尾的政治闹剧</el-option>
-                    <el-option value="解放军继续位台岛周边实战化演训">解放军继续位台岛周边实战化演训</el-option>
-                    <el-option value="佩洛西窜访后台海进入新常态">佩洛西窜访后台海进入新常态</el-option>
+                <div style="font-size: 18px; line-height: 30px;display:block;text-indent:2em">
+                  <p >
+                  舆情事件涉及到众多用户参与，从中挖掘的关键人物各式各样。具体地，我们依据关键人物发言的表达方式，将关键人物划分为思考型、吁请型与情绪型。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">思考型</span>：此类用户在公共事件中之所以具有较强的话语影响力，除了其现实社会威望之外，还在于他们能够对突发事件进行快速、深入的解析，用观点影响人，并带动一般成员共同思考。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">吁请型</span>：在事件还在酝酿期，有些意见活跃分子会发布一些“吁请关注”、“持续追踪”等类型博文，他们一般指向容易激起讨论的事件、现象，为舆情爆发做铺垫。
+                  </p>
+                  <p >
+                    <span style="font-weight:bold">情绪型</span>：情绪型关键人物带有更多个性色彩，表达比较个人化，或愤怒，或感激，有的显得情真意切，也有的显得情绪化。
+                  </p>
+                </div>
+                  <label for="scene">选择角色类型</label>
+                  <el-select id="scene" v-model="selectedKeyUser" @change="displayTable">
+                    <el-option value="请选择角色">请选择角色</el-option>
+                    <el-option value="思考型">思考型</el-option>
+                    <el-option value="吁请型">吁请型</el-option>
+                    <el-option value="情绪型">情绪型</el-option>
                   </el-select>
-                  <template v-if="selectedScene2 === '请选择事件'">
+                  <template v-if="selectedKeyUser === '请选择角色'">
                     <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_" style="width: 100%" border>
+                      <el-table :data="selectedKeyUser0" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
 <!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="关键指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=210 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column4 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column4 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column4 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        
+                        <el-table-column prop="column6" label="类型" header-align="center" align="center" width=70>
+                          <template slot="header">
+                            <b>类型</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="关注话题" header-align="center" align="center" width=800>
+                          <template slot="header">
+                            <b>关注话题</b>
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column3" label="发布时间" header-align="center" align="center" width=160></el-table-column> -->
+                        <el-table-column prop="column7" label="代表博文链接" header-align="center" align="center">
+                          <template slot="header">
+                            <b>代表博文链接</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column7" target="_blank" class="buttonText">{{scope.row.column7}}</a>
+                          </template>
+                        </el-table-column>
                       </el-table>
                     </el-col>
                   </template>
-                  <template v-if="selectedScene2 === '佩洛西窜访台湾六宗罪'">
+                  <template v-if="selectedKeyUser === '思考型'">
                     <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_keyuser_pelosi1" style="width: 100%" border>
+                      <el-table :data="selectedKeyUser1" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
 <!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="关键指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=210 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column4 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column4 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column4 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="关注话题" header-align="center" align="center" width=800>
+                          <template slot="header">
+                            <b>关注话题</b>
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column3" label="发布时间" header-align="center" align="center" width=160></el-table-column> -->
+                        <el-table-column prop="column6" label="代表博文链接" header-align="center" align="center">
+                          <template slot="header">
+                            <b>代表博文链接</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column6" target="_blank" class="buttonText">{{scope.row.column6}}</a>
+                          </template>
+                        </el-table-column>
                       </el-table>
                     </el-col>
                   </template>
-                  <template v-if="selectedScene2 === '外交部回应佩洛西或今晚抵达台湾'">
+                  <template v-if="selectedKeyUser === '吁请型'">
                     <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_keyuser_pelosi2" style="width: 100%" border>
+                      <el-table :data="selectedKeyUser2" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
 <!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="关键指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=210 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column4 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column4 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column4 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="关注话题" header-align="center" align="center" width=800>
+                          <template slot="header">
+                            <b>关注话题</b>
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column3" label="发布时间" header-align="center" align="center" width=160></el-table-column> -->
+                        <el-table-column prop="column6" label="代表博文链接" header-align="center" align="center">
+                          <template slot="header">
+                            <b>代表博文链接</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column6" target="_blank" class="buttonText">{{scope.row.column6}}</a>
+                          </template>
+                        </el-table-column>
                       </el-table>
-                      <span>
-                        <br>
-                        <h4>核心人物示例</h4>
-                        <strong>用户昵称：</strong>拆台CT <br>
-                        <strong>粉丝：</strong> 67.4万  <strong>关注：</strong>615 <br>
-                        <strong>个人简介：</strong>民间脱口秀艺术家，不骂人。如果您感觉被冒犯了，请先反思自己的问题。<br>
-                        <strong>代表微博：</strong>#佩洛西行程#
-
-                          8月2日，台湾ETtoday新闻云发布消息称，佩洛西将在今晚10时20分抵达松山机场，有消息称，佩洛西她将夜宿台北信义区君悦酒店或台北中山区万豪酒店。
-
-                          报道还援引消息称，佩洛西一行人有40人将四散在台北市不同饭店，台外事部门声称“一切保密”。
-
-                          就此事，君悦酒店回应称，针对佩洛西访台一事君悦也相当关注，但“一直到现在都没收到任何讯息，目前跟业务确认过也说没有看到名单，若君悦有收到贵宾下榻情事，势必会需要了解贵宾相关信息，维安都会严阵以待，但目前馆内一切正常。”
-
-                          另外，位于台北中山区大直的万豪酒店，截至出稿时间仍未接听电话。
-
-                          据了解，台北君悦酒店是台北信义区五星级酒店，1990年开幕至今已有逾30年历史，拥有全台最多的850间客房及套房。今年3月美国前国务卿蓬佩奥访台，就选择下榻台北君悦。
-
-                          而台北万豪酒店曾在2020年接待时任美国副国务卿克拉奇、时任美国卫生部长阿札尔，饭店保有隐密性，不会碰到一般旅客，且位置与松山机场仅隔一条河，距离“美国在台协会”在内湖办事处更仅15分钟车程，“是美国官员访台最爱”。
-
-                          #佩洛西访问台湾是危险的挑衅行为#
-                        <br>
-                      </span>
                     </el-col>
                   </template>
-                  <template v-if="selectedScene2 === '解放军全程跟踪迫使佩洛西专机绕道菲律宾'">
+                  <template v-if="selectedKeyUser === '情绪型'">
                       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi3" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-                    <template v-if="selectedScene2 === '佩洛西访问台湾是危险的挑衅行为'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi4" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-                    <template v-if="selectedScene2 === '解放军继续位台岛周边实战化演训'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi5" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '台湾网友吐槽台当局赢了嘴炮苦了人民'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi6" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '王毅称佩洛西窜台是彻头彻尾的政治闹剧'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi7" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '佩洛西窜访后台海进入新常态'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi8" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '外交部回应佩洛西最新涉台言论'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi9" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '佩洛西访台纯粹是针对中国的挑衅'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi10" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '佩洛西到哪了'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi11" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '武统'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi12" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '佩洛西丈夫在港公司或被列入国家制裁'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi13" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '华春莹称中国身后是160多个国家'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi14" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '台海局势观察'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi15" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '特朗普称佩洛西窜台是在帮中国圆梦'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi16" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '践行二十大 青春心向党'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi17" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '解放军在台岛以东设靶逼退里根号'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi18" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '美官方忧中国对佩洛西访台设禁飞区'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi19" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '解放军空军苏-35战机穿越台湾海峡'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi20" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '东部战区组织环台岛战备警巡'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi21" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '若佩洛西敢去台湾那我们拭目以待'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi22" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi23" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '美国游说公司借佩洛西窜台赚黑金'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi24" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '国防部回应取消中美两军三项交往活动'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi25" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '国台办回应蔡英文为佩洛西授勋'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi26" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
-                      </el-col>
-                    </template>
-
-                    <template v-if="selectedScene2 === '拜登回应佩洛西窜台'">
-                      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                        <el-table :data="tableData_keyuser_pelosi27" style="width: 100%" border>
-<!--                          <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                          <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                          <el-table-column prop="column3" label="关键指数"></el-table-column>
-                          <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                        </el-table>
+                        <el-table :data="selectedKeyUser3" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
+<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=210 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column4 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column4 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column4 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="关注话题" header-align="center" align="center" width=800>
+                          <template slot="header">
+                            <b>关注话题</b>
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column3" label="发布时间" header-align="center" align="center" width=160></el-table-column> -->
+                        <el-table-column prop="column6" label="代表博文链接" header-align="center" align="center">
+                          <template slot="header">
+                            <b>代表博文链接</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column6" target="_blank" class="buttonText">{{scope.row.column6}}</a>
+                          </template>
+                        </el-table-column>
+                      </el-table>
                       </el-col>
                     </template>
               </div>
               </el-col>
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
               <div >
+                
                 <h2>群体行为煽动者定位</h2>
-                  <label for="scene">选择事件：</label>
-                  <el-select id="scene" v-model="selectedScene" @change="displayTable">
-                    <el-option value="请选择事件">请选择事件</el-option>
-                    <el-option value="佩洛西窜访台湾六宗罪">佩洛西窜访台湾六宗罪</el-option>
+                <div style="font-size: 18px; line-height: 30px;display:block;text-indent:2em">
+                  <p >
+                    对于每个热议话题，结合用户发言具体分析参与用户关于话题的情感倾向，在此基础上发现重点煽动者并总结其煽动意图。
+                  </p>
+                </div>
+                <!-- <div class="test">
+                  <iframe :src="Src" width="100%" height="450" frameborder=0 ></iframe>
+                </div>
+                <div ref="myChart" style="width: 400px; height: 400px; background-color: #ffffff; padding: 20px; border-radius: 20px;">
+                </div> -->
+                  <label for="scene">选择话题</label>
+                  <el-select id="scene" v-model="selectedShandong" @change="displayTable">
+                    <el-option value="请选择话题">请选择话题</el-option>
+                    <!-- <el-option value="佩洛西窜访台湾六宗罪">佩洛西窜访台湾六宗罪</el-option>
                     <el-option value="外交部回应佩洛西或今晚抵达台湾">外交部回应佩洛西或今晚抵达台湾</el-option>
                     <el-option value="解放军全程跟踪迫使佩洛西专机绕道菲律宾">解放军全程跟踪迫使佩洛西专机绕道菲律宾</el-option>
                     <el-option value="拜登回应佩洛西窜台">拜登回应佩洛西窜台</el-option>
@@ -826,7 +727,7 @@
                     <el-option value="东部战区组织环台岛战备警巡">东部战区组织环台岛战备警巡</el-option>
                     <el-option value="美官方忧中国对佩洛西访台设禁飞区">美官方忧中国对佩洛西访台设禁飞区</el-option>
                     <el-option value="解放军在台岛以东设靶逼退里根号">解放军在台岛以东设靶逼退里根号</el-option>
-<!--                    <el-option value="践行二十大 青春心向党">践行二十大 青春心向党</el-option>-->
+                    <el-option value="践行二十大 青春心向党">践行二十大 青春心向党</el-option>
                     <el-option value="特朗普称佩洛西窜台是在帮中国圆梦">特朗普称佩洛西窜台是在帮中国圆梦</el-option>
                     <el-option value="台海局势观察">台海局势观察</el-option>
                     <el-option value="华春莹称中国身后是160多个国家">华春莹称中国身后是160多个国家</el-option>
@@ -838,976 +739,71 @@
                     <el-option value="台湾网友吐槽台当局赢了嘴炮苦了人民">台湾网友吐槽台当局赢了嘴炮苦了人民</el-option>
                     <el-option value="王毅称佩洛西窜台是彻头彻尾的政治闹剧">王毅称佩洛西窜台是彻头彻尾的政治闹剧</el-option>
                     <el-option value="解放军继续位台岛周边实战化演训">解放军继续位台岛周边实战化演训</el-option>
-                    <el-option value="佩洛西窜访后台海进入新常态">佩洛西窜访后台海进入新常态</el-option>
+                    <el-option value="佩洛西窜访后台海进入新常态">佩洛西窜访后台海进入新常态</el-option> -->
                   </el-select>
-                <span style="font-size: 18px; line-height: 30px">
-                  <br>
-                  正面支持
-                    <br>
-                  </span>
-                  <template v-if="selectedScene === '请选择事件'">
+                  <template v-if="selectedShandong === '请选择话题'">
                     <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_" style="width: 100%" border>
+                      <el-table :data="selectedShandong0" style="width: 100%" border stripe height="450" :header-cell-style="{background:'#EEE9E9',color:'#ffffff'}">
 <!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-                  <template v-if="selectedScene === '佩洛西窜访台湾六宗罪'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi1" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '外交部回应佩洛西或今晚抵达台湾'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi2" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-<!--                      <div v-if="selectedUser">-->
-<!--                        凤凰卫视-->
-<!--                      </div>-->
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '解放军全程跟踪迫使佩洛西专机绕道菲律宾'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi3" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '佩洛西访问台湾是危险的挑衅行为'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi4" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '解放军继续位台岛周边实战化演训'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi5" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '台湾网友吐槽台当局赢了嘴炮苦了人民'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi6" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '王毅称佩洛西窜台是彻头彻尾的政治闹剧'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi7" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '佩洛西窜访后台海进入新常态'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi8" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '外交部回应佩洛西最新涉台言论'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi9" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '佩洛西访台纯粹是针对中国的挑衅'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi10" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '佩洛西到哪了'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi11" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '武统'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi12" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '佩洛西丈夫在港公司或被列入国家制裁'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi13" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '华春莹称中国身后是160多个国家'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi14" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '台海局势观察'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi15" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '特朗普称佩洛西窜台是在帮中国圆梦'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi16" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '践行二十大 青春心向党'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi17" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '解放军在台岛以东设靶逼退里根号'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi18" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '美官方忧中国对佩洛西访台设禁飞区'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi19" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '解放军空军苏-35战机穿越台湾海峡'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi20" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '东部战区组织环台岛战备警巡'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi21" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '若佩洛西敢去台湾那我们拭目以待'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi22" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi23" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '美国游说公司借佩洛西窜台赚黑金'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi24" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '国防部回应取消中美两军三项交往活动'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi25" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '国台办回应蔡英文为佩洛西授勋'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi26" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-
-                  <template v-if="selectedScene === '拜登回应佩洛西窜台'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_firebrand_pos_pelosi27" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                      </el-table>
-                    </el-col>
-                  </template>
-                <span style="font-size: 18px; line-height: 30px">
-                  <br>
-                  负面反对
-                  <br>
-                  </span>
-                <template v-if="selectedScene === '请选择事件'">
-                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                      <el-table :data="tableData_" style="width: 100%" border>
-<!--                        <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                        <el-table-column label="用户详情">
-                          <div @click="showbox = false">
-                        <div style="text-align: center;">
-                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox=true">显示详情</el-button>
-                        </div>
-                        </div>
+                        <el-table-column prop="picture,column2" label="用户账号" header-align="center" align="center" width=210 >
+                          <template slot="header">
+                            <b>用户账号</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column4" label="身份" header-align="center" align="center" width=100>
+                          <template slot="header">
+                            <b>身份</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <el-tag v-if="scope.row.column4 == '新闻媒体'" type="success" round >新闻媒体</el-tag>
+                            <el-tag v-if="scope.row.column4 == '行业精英'" type="warning" round >行业精英</el-tag>
+                            <el-tag v-if="scope.row.column4 == '原创博主'" type="info" round >原创博主</el-tag>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column5" label="关注话题" header-align="center" align="center" width=400>
+                          <template slot="header">
+                            <b>关注话题</b>
+                          </template>
+                        </el-table-column>
+                        <el-table-column prop="column6" label="煽动意图" header-align="center" align="center" width=650>
+                          <template slot="header">
+                            <b>煽动意图</b>
+                          </template>
+                        </el-table-column>
+                        <!-- <el-table-column prop="column3" label="发布时间" header-align="center" align="center" width=160></el-table-column> -->
+                        <el-table-column prop="column7" label="博文链接" header-align="center" align="center">
+                          <template slot="header">
+                            <b>博文链接</b>
+                          </template>
+                          <template slot-scope="scope">
+                            <a :href="scope.row.column7" target="_blank" class="buttonText">{{scope.row.column7}}</a>
+                          </template>
                         </el-table-column>
                       </el-table>
                     </el-col>
                   </template>
-                <template v-if="selectedScene === '佩洛西窜访台湾六宗罪'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi1" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-<!--                      <el-table-column label="用户详情">-->
-<!--                          <div @click="showbox = false">-->
-<!--                        <div style="text-align: center;">-->
-<!--                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox=true">显示详情</el-button>-->
-<!--                        </div>-->
-<!--                        </div>-->
-<!--                        </el-table-column>-->
-                      <el-table-column label="用户详情">
+<!--                   <template v-if="selectedScene === '佩洛西窜访台湾六宗罪'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableData_firebrand_pos_pelosi1" style="width: 100%" border>
+                        <el-table-column prop="column1" label="用户id"></el-table-column>
+                        <el-table-column prop="column2" label="用户昵称"></el-table-column>
+                        <el-table-column prop="column3" label="煽动指数"></el-table-column>
+                        <el-table-column label="用户详情">
                         <template slot-scope="scope">
                           <div style="text-align: center;">
                             <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
                           </div>
                         </template>
                       </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
+                      </el-table>
+                    </el-col>
+                  </template> -->
 
-                <template v-if="selectedScene === '外交部回应佩洛西或今晚抵达台湾'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi2" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
+       
 
-                <template v-if="selectedScene === '解放军全程跟踪迫使佩洛西专机绕道菲律宾'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi3" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '佩洛西访问台湾是危险的挑衅行为'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi4" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '解放军继续位台岛周边实战化演训'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi5" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '台湾网友吐槽台当局赢了嘴炮苦了人民'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi6" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '王毅称佩洛西窜台是彻头彻尾的政治闹剧'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi7" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '佩洛西窜访后台海进入新常态'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi8" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '外交部回应佩洛西最新涉台言论'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi9" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '佩洛西访台纯粹是针对中国的挑衅'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi10" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '佩洛西到哪了'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi11" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '武统'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi12" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '佩洛西丈夫在港公司或被列入国家制裁'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi13" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '华春莹称中国身后是160多个国家'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi14" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '台海局势观察'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi15" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '特朗普称佩洛西窜台是在帮中国圆梦'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi16" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '践行二十大 青春心向党'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi17" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '解放军在台岛以东设靶逼退里根号'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi18" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '美官方忧中国对佩洛西访台设禁飞区'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi19" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '解放军空军苏-35战机穿越台湾海峡'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi20" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '东部战区组织环台岛战备警巡'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi21" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '若佩洛西敢去台湾那我们拭目以待'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi22" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi23" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '美国游说公司借佩洛西窜台赚黑金'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi24" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '国防部回应取消中美两军三项交往活动'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi25" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '国台办回应蔡英文为佩洛西授勋'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi26" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
-
-                <template v-if="selectedScene === '拜登回应佩洛西窜台'">
-                  <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-                    <el-table :data="tableData_firebrand_neg_pelosi27" style="width: 100%" border>
-<!--                      <el-table-column prop="column1" label="用户id"></el-table-column>-->
-                      <el-table-column prop="column2" label="用户昵称"></el-table-column>
-                      <el-table-column prop="column3" label="煽动指数"></el-table-column>
-                      <el-table-column label="用户详情">
-                        <template slot-scope="scope">
-                          <div style="text-align: center;">
-                            <a :href="getUserDetailLink(scope.row.column1)" target="_blank">用户详情</a>
-                          </div>
-                        </template>
-                      </el-table-column>
-                    </el-table>
-                  </el-col>
-                </template>
               </div>
               </el-col>
             </span>
@@ -2287,8 +1283,167 @@
   </div>
 
 </template>
+<script>
+export default{
+  data(){
+    return {
+      Src:'../../../../public/static/render.html'
+    }
+  },
+  methods: {
+  }
+}
+</script>
 
 <script>
+
+ import tableData from './tableData_output.json';
+
+
+  import echarts from 'echarts';
+  import { getList } from "@/api/blacklist";
+  import { mapGetters } from "vuex";
+  import { tokenTableName } from "@/config/settings";
+  import JsonEditor from "@/components/JsonEditor";
+
+  export default {
+
+    data() {
+      return {
+        selectedUser:'请选择类型',
+        selectedKeyUser:'请选择角色',
+        selectedScene:'请选择事件',
+        selectedScene2:'请选择事件',
+        selectedScene3:'请选择事件',
+        tableData_event_pelosi: [
+          { column1: '佩洛西窜访台湾六宗罪', column2: '468'},
+          { column1: '外交部回应佩洛西或今晚抵达台湾', column2: '274'},
+          { column1: '解放军全程跟踪迫使佩洛西专机绕道菲律宾', column2: '185'},
+          { column1: '佩洛西访问台湾是危险的挑衅行为', column2: '104'},
+          { column1: '拜登回应佩洛西窜台', column2: '77'},
+          { column1: '国台办回应蔡英文为佩洛西授勋', column2: '74'},
+          { column1: '国防部回应取消中美两军三项交往活动', column2: '50'},
+          { column1: '美国游说公司借佩洛西窜台赚黑金', column2: '48'},
+          { column1: '解放军空军苏-35战机穿越台湾海峡', column2: '46'},
+          { column1: '中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神', column2: '39'},
+          { column1: '若佩洛西敢去台湾那我们拭目以待', column2: '38'},
+          { column1: '东部战区组织环台岛战备警巡', column2: '37'},
+          { column1: '美官方忧中国对佩洛西访台设禁飞区', column2: '36'},
+          { column1: '解放军在台岛以东设靶逼退里根号', column2: '32'},
+          // { column1: '践行二十大 青春心向党', column2: '30'},
+          { column1: '特朗普称佩洛西窜台是在帮中国圆梦', column2: '28'},
+          { column1: '台海局势观察', column2: '26'},
+          { column1: '华春莹称中国身后是160多个国家', column2: '25'},
+          { column1: '佩洛西丈夫在港公司或被列入国家制裁', column2: '21'},
+          { column1: '武统', column2: '20'},
+          { column1: '佩洛西访台纯粹是针对中国的挑衅', column2: '19'},
+          { column1: '佩洛西到哪了', column2: '19'},
+          { column1: '外交部回应佩洛西最新涉台言论', column2: '18'},
+          { column1: '台湾网友吐槽台当局赢了嘴炮苦了人民', column2: '17'},
+          { column1: '王毅称佩洛西窜台是彻头彻尾的政治闹剧', column2: '17'},
+          { column1: '解放军继续位台岛周边实战化演训', column2: '16'},
+          { column1: '佩洛西窜访后台海进入新常态', column2: '15'},
+        ],
+         tableData_keyuser_pelosi1: tableData.tableData_keyuser_pelosi1,
+         tableData_keyuser_pelosi2: tableData.tableData_keyuser_pelosi2,
+         tableData_keyuser_pelosi3: tableData.tableData_keyuser_pelosi3,
+         tableData_keyuser_pelosi4: tableData.tableData_keyuser_pelosi4,
+         tableData_keyuser_pelosi5: tableData.tableData_keyuser_pelosi5,
+         tableData_keyuser_pelosi6: tableData.tableData_keyuser_pelosi6,
+         tableData_keyuser_pelosi7: tableData.tableData_keyuser_pelosi7,
+         tableData_keyuser_pelosi8: tableData.tableData_keyuser_pelosi8,
+         tableData_keyuser_pelosi9: tableData.tableData_keyuser_pelosi9,
+         tableData_keyuser_pelosi10: tableData.tableData_keyuser_pelosi10,
+         tableData_keyuser_pelosi11: tableData.tableData_keyuser_pelosi11,
+         tableData_keyuser_pelosi12: tableData.tableData_keyuser_pelosi12,
+         tableData_keyuser_pelosi13: tableData.tableData_keyuser_pelosi13,
+         tableData_keyuser_pelosi14: tableData.tableData_keyuser_pelosi14,
+         tableData_keyuser_pelosi15: tableData.tableData_keyuser_pelosi15,
+         tableData_keyuser_pelosi16: tableData.tableData_keyuser_pelosi16,
+         tableData_keyuser_pelosi17: tableData.tableData_keyuser_pelosi17,
+         tableData_keyuser_pelosi18: tableData.tableData_keyuser_pelosi18,
+         tableData_keyuser_pelosi19: tableData.tableData_keyuser_pelosi19,
+         tableData_keyuser_pelosi20: tableData.tableData_keyuser_pelosi20,
+         tableData_keyuser_pelosi21: tableData.tableData_keyuser_pelosi21,
+         tableData_keyuser_pelosi22: tableData.tableData_keyuser_pelosi22,
+         tableData_keyuser_pelosi23: tableData.tableData_keyuser_pelosi23,
+         tableData_keyuser_pelosi24: tableData.tableData_keyuser_pelosi24,
+         tableData_keyuser_pelosi25: tableData.tableData_keyuser_pelosi25,
+         tableData_keyuser_pelosi26: tableData.tableData_keyuser_pelosi26,
+         tableData_keyuser_pelosi27: tableData.tableData_keyuser_pelosi27,
+
+
+
+
+
+        //tableData_keyuser_pelosi1: [{'column1': '2656274875', 'column2': '央视新闻', 'column3': '#佩洛西赴台是重大政治挑衅#【#外交部回应佩洛西窜访中国台湾地区# #外交部正告美方玩火者必自焚#】8月2日，美国国会众议长佩洛西不顾中方强烈反对和严正交涉，窜访中国台湾地区，严重违反一个中国原则和中美三个联合公报规定，严重冲击中美关系政治基础，严重侵犯中国主权和领土完整，严重破坏台海和平稳定，向“台独”分裂势力发出严重错误信号。中方对此坚决反对，严厉谴责，已向美方提出严正交涉和强烈抗议。'},] ,
+
+
+
+        YQ_data: [
+          {
+            variety: "事件一",
+            variety_value: "佩洛西访台舆情数据集",
+            id:1,
+          },
+          {
+            variety: "事件二",
+            variety_value: "香港数据集",
+            id:2,
+          },
+        ],
+        YQ_level: [
+          {
+            variety: "等级一",
+            variety_value: "等级一",
+            id:1,
+          },
+          {
+            variety: "等级二",
+            variety_value: "等级二",
+            id:2,
+          },
+          {
+            variety: "等级三",
+            variety_value: "等级三",
+            id:3,
+          },
+
+          {
+            variety: "等级四",
+            variety_value: "等级四",
+            id:4,
+          },
+
+        ],
+        form: {
+          password: "",
+        },
+        rules: {
+          password: [
+            { required: true, message: "请输入支付密码", trigger: "blur" },
+          ],
+        },
+        loading: false,
+      };
+    },
+
+    created() {
+  for (let i = 1; i <= 26; i++) {
+    const key = `tableData_keyuser_pelosi${i}`;
+    this.tableData_keyuser_pelosi.push(tableData[key]);
+  }
+}
+}
+
+</script>
+
+
+<script>
+
+import tableData from './jsonData.json';
+import tableDataKeyUser from './jsonDataKey.json';
+import tableDataShandong from './jsonShandong.json';
   export default {
     props: {
       infoData: {
@@ -2343,9 +1498,21 @@
           { column1: '美官员称击中波兰的导弹为乌克兰发射', column2: '19'},
           { column1: '乌外长催促美提供爱国者导弹', column2: '18'}
         ],
+        tableUserData_all:tableData.tableUserData0,
+        tableUserData_media:tableData.tableUserData1,
+        tableUserData_vip:tableData.tableUserData2,
+        tableUserData_common:tableData.tableUserData3,
+        selectedKeyUser0:tableDataKeyUser.tableKeyUserData0,
+        selectedKeyUser1:tableDataKeyUser.tableKeyUserData1,
+        selectedKeyUser2:tableDataKeyUser.tableKeyUserData2,
+        selectedKeyUser3:tableDataKeyUser.tableKeyUserData3,
+        selectedShandong0:tableDataShandong.tableShandongData0,
         selectedScene:'请选择事件',
         selectedScene2:'请选择事件',
         selectedScene3:'请选择事件',
+        selectedUser:'请选择类型',
+        selectedKeyUser:'请选择角色',
+        selectedShandong:'请选择话题',
         tableData_keyuser_pelosi5: [{'column1': '1263406744', 'column2': '司马南', 'column3': '14991'}, {'column1': '7040797671', 'column2': '玉渊谭天', 'column3': '940'}] ,
         tableData_keyuser_pelosi6: [{'column1': '3266943013', 'column2': '央视网', 'column3': '3332'}, {'column1': '1974576991', 'column2': '环球时报', 'column3': '1732'}] ,
         tableData_keyuser_pelosi7: [{'column1': '1496814565', 'column2': '封面新闻', 'column3': '17262'}, {'column1': '3266943013', 'column2': '央视网', 'column3': '2434'}] ,
@@ -2466,11 +1633,12 @@
         tableData_firebrand_neg_ukraine2: [{'column1': '4838173966600773', 'column2': '娜娜要努力VIP', 'column3': '-0.7243964713717239'}, {'column1': '4839020279896869', 'column2': '财新网', 'column3': '-0.4999999989693471'}, {'column1': '4838529647514875', 'column2': '徐嘉苧', 'column3': '-0.49999995802179975'}, {'column1': '4837249377637022', 'column2': '俄乌战争 纪实', 'column3': '-0.49963896031834953'}, {'column1': '4839490314568229', 'column2': '台湾傻事', 'column3': '-0.49703052248517043'}, {'column1': '4838649671979482', 'column2': '丘赫尔加坚--', 'column3': '-0.4792849108304341'}, {'column1': '4838258930878983', 'column2': '房长沙V', 'column3': '-0.47885557221586317'}, {'column1': '4837146382830016', 'column2': '煮鹅大师', 'column3': '-0.45828008909845175'}, {'column1': '4836767167944510', 'column2': '大鹏守御千户所', 'column3': '-0.4241270330726987'}, {'column1': '4837116146095059', 'column2': '澎湃新闻', 'column3': '-0.39383945681263643'}] ,
         tableData_firebrand_pos_ukraine1: [{'column1': '4838968317971213', 'column2': '萤火虫如我', 'column3': '4.499989227967887'}, {'column1': '4838901531807129', 'column2': '萤火虫如我', 'column3': '4.499933438872885'}, {'column1': '4837845813170295', 'column2': '雒邑叔宽', 'column3': '3.999999999978116'}, {'column1': '4836778060546818', 'column2': '萤火虫如我', 'column3': '3.9999935945296343'}, {'column1': '4838764977592399', 'column2': '萤火虫如我', 'column3': '3.5'}, {'column1': '4839369464874861', 'column2': '萤火虫如我', 'column3': '3.5'}, {'column1': '4838304760991262', 'column2': '萤火虫如我', 'column3': '3.499999999786157'}, {'column1': '4839015679276424', 'column2': '萤火虫如我', 'column3': '3.499999997383414'}, {'column1': '4839351844078248', 'column2': '萤火虫如我', 'column3': '3.498724808182046'}, {'column1': '4836870065756288', 'column2': '仰望弗洛伊德', 'column3': '3.4983715248229337'}] ,
         tableData_firebrand_neg_ukraine1: [{'column1': '4839174164972538', 'column2': '柯义就叫柯义', 'column3': '-3.499944835785162'}, {'column1': '4838027689726143', 'column2': '萤火虫如我', 'column3': '-2.2424511758287617'}, {'column1': '4836897886830679', 'column2': '远山的呼唤_曾经的户外名', 'column3': '-1.8172971433287657'}, {'column1': '4837951915956728', 'column2': '远山的呼唤_曾经的户外名', 'column3': '-1.6725560357013287'}, {'column1': '4838737915415914', 'column2': '晨雾', 'column3': '-1.455339282776738'}, {'column1': '4838360666870138', 'column2': '指尖上的乌克兰', 'column3': '-1.4265923867615626'}, {'column1': '4837615583365941', 'column2': '远山的呼唤_曾经的户外名', 'column3': '-1.3771820134861334'}, {'column1': '4837057346667780', 'column2': '飞飞_xu', 'column3': '-1.327691031134202'}, {'column1': '4837435852981796', 'column2': '黄胜友', 'column3': '-1.1475879771099882'}, {'column1': '4838173966600773', 'column2': '娜娜要努力VIP', 'column3': '-0.9658619618289652'}] ,
-
+        
+        
         YQ_data: [
           {
             variety: "事件一",
-            variety_value: "佩洛西访台舆情数据集",
+            variety_value: "佩罗西访台舆情数据集",
             id:1,
           },
           // {
@@ -2514,6 +1682,25 @@
         loading: false,
       };
     },
+    
+    created() {
+      this.tableUserData.push(tableData['tableUserData0']);
+      for (let i = 1; i <= 3; i++) {
+        const key = `tableUserData${i}`;
+        this.tableUserData.push(tableData[key]);
+      }
+      this.tableShandong.push(tableDataShandong['tableShandongData0']);
+      for (let i = 1; i <= 0; i++) {
+        const key = `tableShandongData${i}`;
+        this.tableShandong.push(tableDataShandong[key]);
+      }
+      this.tableKeyUser.push(tableDataKeyUser['tableKeyUserData0']);
+      for (let i = 1; i <= 3; i++) {
+        const key = `tableKeyUserData${i}`;
+        this.tableKeyUser.push(tableDataKeyUser[key]);
+      }
+    
+},
     methods: {
       getUserDetailLink(userId) {
         return `https://weibo.com/u/${userId}`;
@@ -2550,10 +1737,15 @@
       showUserDetails(user) {
         this.selectedUser = { nickname: '凤凰卫视' };
       },
+      headSpanFit (h, { column, index }) {
+        let labelLong = column.label.length // 表头label长度
+        let size = 14 // 根据需要定义标尺，直接使用字体大小确定就行，也可以根据需要定义
+        column.minWidth = labelLong * size // 根据label长度计算该表头最终宽度
+        return h('span', { class: 'cell-content', style: { width: '100%' } }, [column.label])
+      },
     },
   };
 </script>
-
 <style lang="scss" scoped>
   .pay-button-group {
     display: block;

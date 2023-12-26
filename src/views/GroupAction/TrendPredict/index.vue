@@ -476,12 +476,226 @@
                       </div>
 
                   </template>
-                  
-
-                 
-
+              
                   </span>
                 </div>
+                <div>
+                  <span v-if ="options.variety==3">
+                    <h2>关键事件选择</h2>
+                  <label for="scene">选择事件：</label>
+                  <el-select id="scene" v-model="selectedScene" @change="displayTable">
+                    <el-option value="请选择事件">请选择事件</el-option>
+                    <el-option value=外交部回应佩洛西或今晚抵达台湾>外交部回应佩洛西或今晚抵达台湾</el-option>
+                    <el-option value=国台办回应蔡英文为佩洛西授勋>国台办回应蔡英文为佩洛西授勋</el-option>
+                    <el-option value=国防部回应取消中美两军三项交往活动>国防部回应取消中美两军三项交往活动</el-option>
+                    <el-option value=中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神>中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神</el-option>
+                    <el-option value=特朗普称佩洛西窜台是在帮中国圆梦>特朗普称佩洛西窜台是在帮中国圆梦</el-option>
+                    <el-option value=佩洛西丈夫在港公司或被列入国家制裁>佩洛西丈夫在港公司或被列入国家制裁</el-option>
+                    
+                   
+                    
+                    
+                  </el-select>
+                  <template v-if="selectedScene === '请选择事件'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableData_" style="width: 50%" border>
+                        <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                      </el-table>
+                    </el-col>
+                  </template>
+                  <template v-if="selectedScene === '外交部回应佩洛西或今晚抵达台湾'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_1" style="width: 100%"  border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width = 120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox1 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox1=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox1">
+                          <br>
+                        <el-table :data="tableDataZKT_1_wxj" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+
+                  <template v-if="selectedScene === '国台办回应蔡英文为佩洛西授勋'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_5" style="width: 100%" border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width=120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox2 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox2=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox2">
+                          <br>
+                        <el-table :data="tableDataZKT_5_wxj" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+
+                  <template v-if="selectedScene === '国防部回应取消中美两军三项交往活动'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_6" style="width: 100%" border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width=120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox3 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox3=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox3">
+                          <br>
+                        <el-table :data="tableDataZKT_6_ysx" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+
+                  <template v-if="selectedScene === '中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_9" style="width: 100%" border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width=120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox4 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox4=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox4">
+                          <br>
+                        <el-table :data="tableDataZKT_9_ysx" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+
+                  <template v-if="selectedScene === '特朗普称佩洛西窜台是在帮中国圆梦'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_15" style="width: 100%" border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width=120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox5 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox5=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox5">
+                          <br>
+                        <el-table :data="tableDataZKT_15_agq" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+
+                  <template v-if="selectedScene === '佩洛西丈夫在港公司或被列入国家制裁'">
+                    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+                      <el-table :data="tableDataZKT_18" style="width: 100%" border>
+                        <!-- <el-table-column prop="column1" label="clusterid"></el-table-column>-->
+                        <el-table-column prop="column2" label="作者昵称" width=120></el-table-column>
+                        <el-table-column prop="column3" label="内容"></el-table-column>
+                      </el-table>
+                      <br><br>
+                      
+                      
+                    </el-col>
+                    <br><br><br>
+                    <div @click="showbox6 = false">
+                        <br>
+                        <div style="text-align: center;">
+                          <br>
+                          <el-button type="primary" round icon="el-icon-search" @click.stop="showbox6=true">显示预测结果</el-button>
+                        </div>
+                        <div v-show="showbox6">
+                          <br>
+                        <el-table :data="tableDataZKT_18_wxj" style="width: 50%" border>
+                          <el-table-column prop="column1" label="用户昵称"></el-table-column>
+                        <!-- <el-table-column prop="column2" label="clusterid"></el-table-column>
+                        <el-table-column prop="column3" label="作者id"></el-table-column> -->
+                        <el-table-column prop="column4" label="实际参与情况"></el-table-column>
+                        <el-table-column prop="column5" label="预测参与情况"></el-table-column>
+                        </el-table>
+                        </div>
+                      </div>
+
+                  </template>
+                  </span>
+                </div>
+
               </el-col>
 
 
@@ -629,6 +843,12 @@
           variety: '选项2',
           variety_value: '个体行为波动预测分析',
           id:2,
+
+          }, 
+          {
+          variety: '选项3',
+          variety_value: '主客体关系研判分析',
+          id:3,
 
           }, 
          
@@ -1511,6 +1731,2323 @@
             column7: "/"
         },
     ],
+    tableDataZKT_1_wxj: [
+        {
+            column1: "小玲duang",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "liu137093",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "愛撿石頭小魚狗",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "波记98",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "Song230908",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "MDDOQ",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "勤劳的自由鸟",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "74辉哥仔",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "ExtremeMax",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "时间向左飞越",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "光之虚实",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "kakamens",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "是种花家野老",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "经济适用的西红柿",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户6193062126",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "努力辨别真伪",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "爱骑行的飘扬",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "做人当如陈道明",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "Newlife797",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "o猫美人o",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "软啊阮阿維",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户7193194985",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "我的letme",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "didi赤狄青",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "雨天_joe",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "sarawaltz",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户5294854314",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "正能量小坚果",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "筱薇紫cht",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "水会记住你",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "悠悠晴玫",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "辰星星星儿",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "梨棠lllllllll",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "蚊不叮人",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Cindylizhu",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "winchachaina",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "肖申克的救赎嘿嘿嘿",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "吖嘉嘉Rozlynn",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "青奥也爱红",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "岚鹏友ovo",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "昆明设计师张张",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "华山论剑我在场",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "倾酒如故-",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "一钵春雨化苦酒",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "英明翼",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "SmileY0NG",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "老金G",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "林阿奔II",
+            column2: "1",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "火锅女王KQ",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "鮱頭先生",
+            column2: "1",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_4_zxs: [
+        {
+            column1: "徽州反邪教",
+            column2: "4",
+            column3: "中新视频",
+            column4: "1",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_5_wxj: [
+        {
+            column1: "小玲duang",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "liu137093",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "愛撿石頭小魚狗",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "波记98",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Song230908",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "MDDOQ",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "勤劳的自由鸟",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "74辉哥仔",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "ExtremeMax",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "时间向左飞越",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "光之虚实",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "kakamens",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "是种花家野老",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "经济适用的西红柿",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户6193062126",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "努力辨别真伪",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "爱骑行的飘扬",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "做人当如陈道明",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Newlife797",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "o猫美人o",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "软啊阮阿維",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "用户7193194985",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "我的letme",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "didi赤狄青",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "雨天_joe",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "sarawaltz",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户5294854314",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "正能量小坚果",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "筱薇紫cht",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "水会记住你",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "悠悠晴玫",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "辰星星星儿",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "梨棠lllllllll",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "蚊不叮人",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Cindylizhu",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "winchachaina",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "肖申克的救赎嘿嘿嘿",
+            column2: "5",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "吖嘉嘉Rozlynn",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "青奥也爱红",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "岚鹏友ovo",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "昆明设计师张张",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "华山论剑我在场",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "倾酒如故-",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "一钵春雨化苦酒",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "英明翼",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "SmileY0NG",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "老金G",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "林阿奔II",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "火锅女王KQ",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "鮱頭先生",
+            column2: "5",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_6_ysx: [
+        {
+            column1: "唯一的晓茗",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "听说我们不曾落泪18",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "涂山胖子精",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "墨墨墨墨_妍",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "w_w2015",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "鲁白bai",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "小锤子君",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木兰橘",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "海这边vs旭",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "柚子的小雯酱",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "十八子91221",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木灯霞飞",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "盐丁儿1711",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "雄毅V",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "星落雾尘",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Right_Timing",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "杨小羊同学吖-",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "庄一瓶20260",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "I阿帕西诺",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "冥想n",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "凝小叶_",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "用户6271433177",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "菲琳雅",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "早开的长途班88",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "三方人子yy",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "快乐凌朦",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "楚風漢韻sir",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "李干观世界",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "露丝小师哥",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "明月当空下的小魔兽",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "一顿十个兔头",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "奔跑向前的蜗牛",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "林月明法律工作人员",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "一碗汤圆三毛钱呀Same",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "wo勇闯天涯",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "整天嘻嘻哈哈吖",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木木不吃糖",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "安娜catfish1221",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "东篱外南山见",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "jingxialba",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "豆男爵",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "賀冲Z",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "什么时候可以养猫呀555",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Claire9717",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "茶亦醉人何必酒z",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "山田小猫咪的云朵枕头亚麻糖",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "轻风xuan",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Two蜜蜂",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "lnlnlyb",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "風見暉一",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "用户7315781092",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "畏止",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "goodgoodbaggioTwo",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Beijing731001",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "胖胖鱼吉祥",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "水流无限98254",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Jasonzou123",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "x初见n",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "肖意一肖宇齐",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "还是热水冲燕麦最经典",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "榆木上的佛铃",
+            column2: "6",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+    ],
+    tableDataZKT_9_ysx: [
+        {
+            column1: "唯一的晓茗",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "听说我们不曾落泪18",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "涂山胖子精",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "墨墨墨墨_妍",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "w_w2015",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "鲁白bai",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "小锤子君",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木兰橘",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "海这边vs旭",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "柚子的小雯酱",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "十八子91221",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木灯霞飞",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "盐丁儿1711",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "雄毅V",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "星落雾尘",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Right_Timing",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "杨小羊同学吖-",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "庄一瓶20260",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "I阿帕西诺",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "冥想n",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "凝小叶_",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "用户6271433177",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "菲琳雅",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "早开的长途班88",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "三方人子yy",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "快乐凌朦",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "楚風漢韻sir",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "李干观世界",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "露丝小师哥",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "明月当空下的小魔兽",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "一顿十个兔头",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "奔跑向前的蜗牛",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "林月明法律工作人员",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "一碗汤圆三毛钱呀Same",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "wo勇闯天涯",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "整天嘻嘻哈哈吖",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "木木不吃糖",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "安娜catfish1221",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "东篱外南山见",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "jingxialba",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "豆男爵",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "賀冲Z",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "什么时候可以养猫呀555",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Claire9717",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "茶亦醉人何必酒z",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "山田小猫咪的云朵枕头亚麻糖",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "轻风xuan",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Two蜜蜂",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "lnlnlyb",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "風見暉一",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "用户7315781092",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "畏止",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "goodgoodbaggioTwo",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Beijing731001",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "胖胖鱼吉祥",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "水流无限98254",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Jasonzou123",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "x初见n",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "肖意一肖宇齐",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "还是热水冲燕麦最经典",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "榆木上的佛铃",
+            column2: "9",
+            column3: "央视新闻",
+            column4: "1",
+            column5: "1"
+        },
+    ],
+    tableDataZKT_13_ppx: [
+        {
+            column1: "Mr郭洪标",
+            column2: "13",
+            column3: "澎湃新闻",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_17_ppx: [
+        {
+            column1: "Mr郭洪标",
+            column2: "17",
+            column3: "澎湃新闻",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_15_agq: [
+        {
+            column1: "用户6643098914",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "用户7764240549",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "星辰v挚爱",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "空冥与橘子海",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "无问th之阳",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "LID-sina",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "迎莹比卡丘",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "数学可真是我的天敌",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "昊昊的愤怒",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "小狗味夹心饼干",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "夏夜悠悠长流萤乱星光",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "闷闷menmen_",
+            column2: "15",
+            column3: "爱国青年刘战神",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_17_xgw: [
+        {
+            column1: "镂红剪翠",
+            column2: "17",
+            column3: "香港文匯網",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "杰少3923",
+            column2: "17",
+            column3: "香港文匯網",
+            column4: "1",
+            column5: "1"
+        },
+    ],
+    tableDataZKT_26_xgw: [
+        {
+            column1: "镂红剪翠",
+            column2: "26",
+            column3: "香港文匯網",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "杰少3923",
+            column2: "26",
+            column3: "香港文匯網",
+            column4: "1",
+            column5: "1"
+        },
+    ],
+    tableDataZKT_18_wxj: [
+        {
+            column1: "小玲duang",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "liu137093",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "愛撿石頭小魚狗",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "波记98",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "Song230908",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "MDDOQ",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "勤劳的自由鸟",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "74辉哥仔",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "ExtremeMax",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "时间向左飞越",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "光之虚实",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "kakamens",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "是种花家野老",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "经济适用的西红柿",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "用户6193062126",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "努力辨别真伪",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "爱骑行的飘扬",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "做人当如陈道明",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Newlife797",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "o猫美人o",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "软啊阮阿維",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "用户7193194985",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "1"
+        },
+        {
+            column1: "我的letme",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "didi赤狄青",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "雨天_joe",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "sarawaltz",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "用户5294854314",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "正能量小坚果",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "筱薇紫cht",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "水会记住你",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "悠悠晴玫",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "辰星星星儿",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "梨棠lllllllll",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "蚊不叮人",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "Cindylizhu",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "winchachaina",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "肖申克的救赎嘿嘿嘿",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "吖嘉嘉Rozlynn",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "青奥也爱红",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "岚鹏友ovo",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "昆明设计师张张",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "华山论剑我在场",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "倾酒如故-",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "一钵春雨化苦酒",
+            column2: "18",
+            column3: "无心简影",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "英明翼",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "SmileY0NG",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "老金G",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "林阿奔II",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "火锅女王KQ",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+        {
+            column1: "鮱頭先生",
+            column2: "18",
+            column3: "无心简影",
+            column4: "0",
+            column5: "1"
+        },
+    ],
+    tableDataZKT_19_wlt: [
+        {
+            column1: "壹事之师",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "武统号",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "可见光_32792",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "朱明达47867",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "壹事之师",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "武统号",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "可见光_32792",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "朱明达47867",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "壹事之师",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "武统号",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "可见光_32792",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "朱明达47867",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "壹事之师",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "武统号",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "可见光_32792",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "朱明达47867",
+            column2: "19",
+            column3: "武力统一",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "壹事之师",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "武统号",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "可见光_32792",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+        {
+            column1: "朱明达47867",
+            column2: "19",
+            column3: "武力统一",
+            column4: "1",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_20_ppx: [
+        {
+            column1: "Mr郭洪标",
+            column2: "20",
+            column3: "澎湃新闻",
+            column4: "1",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_20_bjw: [
+        {
+            column1: "2022禅",
+            column2: "20",
+            column3: "北京晚报",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "天然心情--",
+            column2: "20",
+            column3: "北京晚报",
+            column4: "0",
+            column5: "0"
+        },
+        {
+            column1: "恭谨谦卑未来可期",
+            column2: "20",
+            column3: "北京晚报",
+            column4: "0",
+            column5: "0"
+        },
+    ],
+    tableDataZKT_1: [
+        {
+            column1: "1",
+            column2: "无心简影",
+            column3: "#外交部宣布中方制裁佩洛西# 制裁来了 ​"
+        },
+    ],
+    tableDataZKT_4: [
+        {
+            column1: "4",
+            column2: "中新视频",
+            column3: "【#外交部有力回击佩洛西窜台等倒行逆施#】二十大第四场记者招待会上，外交部党委委员、副部长马朝旭表示，我们有力回击佩洛西窜台等倒行逆施，坚决反对任何台独行径，坚决遏制外国势力干涉，进一步巩固“一个中国”的国际共识。 http://t.cn/A6o6JmZ5 ​"
+        },
+    ],
+    tableDataZKT_5: [
+        {
+            column1: "5",
+            column2: "无心简影",
+            column3: "拜登表态了，他在周一说，他并不担心台湾，但是他担心佩洛西窜台之后，中国大陆在该地区的军事行动。\n\"我很担心他们（中国）会像现在这样行动，\"拜登在出发去访问被洪水蹂躏的肯塔基州时说。\"但我不认为他们会比现在做更多的事情。\"\n\n#东部战区# ​"
+        },
+    ],
+    tableDataZKT_6: [
+        {
+            column1: "6",
+            column2: "央视新闻",
+            column3: "【#吴谦回应取消中美两军三项交往活动# #中方反制措施是对美台挑衅必要警示#】8月8日，国防部新闻发言人吴谦就中方取消中美两军三项交往活动及美媒有关炒作答记者问。全文如下：\n\n问：近日，中方针对佩洛西窜台宣布八项反制措施，其中包括取消中美军事交往三项措施。有美国媒体报道，美军高层近日曾多次给中国军队领导打电话，但被中方拒绝。请问对此有何评论？\n\n答：当前台海形势紧张局面，完全是美方主动挑衅、一手制造的，美方必须为此承担全部责任和严重后果。中方曾就中美两国两军关系、台湾问题等表明严正立场，特别是针对美国会众议长佩洛西窜访多次严正交涉，美方却说一套、做一套，纵容支持佩窜访，蓄意制造台海紧张局势。\n\n针对美方恶劣挑衅行径，中方宣布了八项反制措施，其中包括取消安排中美两军战区领导通话、取消中美国防部工作会晤、取消中美海上军事安全磋商机制会议。中方有关反制措施是对美台挑衅的必要警示，对国家主权和安全的正当捍卫，完全合理、恰当适度。\n\n底线不容突破，沟通需要诚意。美方一面制造危机，一面又声称要管控危机，为其错误言行和挑衅举动找托词、打掩护，甚至对外炒作、混淆视听、甩锅推责，我们坚决反对。我们敦促美方切实尊重中方的核心利益和重大关切，放弃“以台制华”的幻想，不要在错误的道路上越走越远。"
+        },
+    ],
+    tableDataZKT_9: [
+        {
+            column1: "9",
+            column2: "央视新闻",
+            column3: "#主播说联播#【#世界潮流浩荡公道自在人心#】佩洛西窜台，看似“挺台”，实际效果是“拆台”；她戴着伪善面纱，大搞政治投机，引发国际社会愤慨。170多个国家和国际组织发出正义之声，美方的霸凌嘴脸也再一次暴露于世。 “世界要公道，不要霸道。”世界潮流浩荡，倒行逆施则亡。那些以霸道、霸权为能事的国家，该认清现实，改邪归正，好好听听14亿多中国人民的呼声，听听国际社会的正义之声！ http://t.cn/A6S7AsIh"
+        },
+    ],
+    tableDataZKT_13: [
+        {
+            column1: "13",
+            column2: "澎湃新闻",
+            column3: "【白宫无端指责中方军演，#美防长指派里根号穿越台海#】#白宫称中国对佩洛西访台反应过度#当地时间8月4日，美国国家安全委员会发言人约翰·柯比称中国对佩洛西访台“反应过度”，无端指责中方军演，却指派“里根”号穿越台海。#同中方建交国家不得与台湾官方往来#http://t.cn/A6SviRzO  http://t.cn/A6SvieIv"
+        },
+    ],
+    tableDataZKT_17: [
+        {
+            column1: "17",
+            column2: "澎湃新闻",
+            column3: "【白宫无端指责中方军演，#美防长指派里根号穿越台海#】#白宫称中国对佩洛西访台反应过度#当地时间8月4日，美国国家安全委员会发言人约翰·柯比称中国对佩洛西访台“反应过度”，无端指责中方军演，却指派“里根”号穿越台海。#同中方建交国家不得与台湾官方往来#http://t.cn/A6SviRzO  http://t.cn/A6SvieIv"
+        },
+    ],
+    tableDataZKT_15: [
+        {
+            column1: "15",
+            column2: "爱国青年刘战神",
+            column3: "法国外交部：佩洛西访台不应被中国用作升级紧张局势的借口。。。。\n\n#特朗普又双叒谴责佩洛西##解放军逾百舰机越所谓中线演练攻台# ​"
+        },
+    ],
+    tableDataZKT_26: [
+        {
+            column1: "26",
+            column2: "香港文匯網",
+            column3: "【外交部：已有160多个国家谴责佩洛西窜台】华春莹表示，佩洛西窜台事件发生以来，已有160多个国家发出了正义的声音，纷纷谴责佩洛西访台是严重的挑衅，是非常鲁莽和不负责任的，而且都表示将坚持一个中国原则，支持中国维护国家主权和领土完整。http://t.cn/A6ShmbKb #这就是中国态度# #同中方建交国家不得与台湾官方往来# #解放军常规导弹穿越台岛意味着什么# #旺旺#  #取消安排中美两军战区领导通话# #外交部宣布制裁佩洛西# #东部战区出动海陆空英雄部队#"
+        },
+    ],
+    tableDataZKT_18: [
+        {
+            column1: "18",
+            column2: "无心简影",
+            column3: "#佩洛西被抗议者连声质问# ​​​【#佩洛西又被当众怼#！多名抗议者质问：为什么窜台拱火？我们不想和中国开战】“嘿，佩洛西，你这个战争犯”“你为什么不承认伊拉克没有大规模杀伤性武器”？“为什么不说出关于‘北溪’的真相”？为什么要窜台拱火让“飞机降落在台湾”……这一幕，出现在纽约市立大学研究生中心当地时间3日举办的一场活动中。\\n\\n推特认证为记者的一名用户当地时间4日发推，晒出自己和多位朋友在活动中对台上的美国前众议院议长大声质疑的现场画面。他发推称，“我和我的朋友们质问佩洛西。我们提醒她承认（伊拉克）没有大规模杀伤性武器，告诉她金融系统因为她而崩溃，并且她会让台湾成为下一个乌克兰”。现场视频显示，抗议者冲台上的佩洛西发出质问，后者则举着麦克风试图平息现场的躁动。\\n\\n一名抗议者大声质疑，“你知道的，佩洛西，地狱深处对你来说是个非常好的地方，因为出于某种原因，你非常痴迷于让我们卷入战争。”“嘿，你为什么不承认伊拉克没有大规模杀伤性武器？你骗我们，让我们卷入了伊拉克战争。你让我们入侵阿富汗。现在（这些国家）超过90%的人处于贫困状态，濒临死亡。你为什么不说出关于‘北溪’的真相 ？我们为什么要摧毁 ‘北溪’管道？你让数百万德国人失去能源！像你这样的人应该被逮捕，你是战争犯。”\\n\\n另一名抗议者大声喊道，“嘿，国会女议员。我是来这里看战争贩的，但你是个可悲的老酒鬼！发生了什么事？你去台湾的时候，是在找寻下一个乌克兰吗？我们是无意还是故意炸了‘北溪’”？“你是否明天就该被起诉？你就是个战犯，佩洛西，你真有胆量 ，所以你才来曼哈顿的吗？这就是你来这里的原因吗？因为你明天就要被起诉了。你这个该死的战犯。有多少人死在你的名下？有多少人死于伊拉克战争？你都忘了伊拉克（战争）吗？还有伊朗？利比亚？叙利亚？”\\n\\n视频中，还有抗议者提到佩洛西窜台一事，指责她在涉台问题上拱火浇油，“你的飞机降落在台湾，与此同时，（这表现出）我们想和中国开战，我们都想让核弹落在我们头上……我在这里代表所有热爱和平的人，（我们）不想与俄罗斯开战，不想与中国开战，不想与东方开启新的热战。”\\n\\n视频背景声中还可以听到，上述抗议者发出一句句质问的同时，被现场安保人员不断催促带离现场。\\n\\n2022年8月2日，时任美国国会众议长佩洛西不顾中方强烈反对和严正交涉，窜访中国台湾地区，严重违反一个中国原则和中美三个联合公报规定，严重冲击中美关系政治基础，严重侵犯中国主权和领土完整，严重破坏台海和平稳定，向“台独”分裂势力发出严重错误信号。中方对此坚决反对，严厉谴责，已向美方提出严正交涉和强烈抗议。外交部发言人华春莹表示，佩洛西危险挑衅行为纯粹是为了捞取个人政治资本，而在这场丑陋的闹剧当中，民主不过是美方惯用的廉价工具和幌子，哗众取宠的是佩洛西个人，但遭殃受害的是中美关系及台海和平稳定。 http://t.cn/A6Nw90DQ"
+        },
+    ],
+    tableDataZKT_19: [
+        {
+            column1: "19",
+            column2: "武力统一",
+            column3: "介文汲：佩洛西闯大祸，得罪了中国，美国没有实力同时和中俄对抗\n近日，台前“立委”介文汲称，佩洛西窜台，得罪中国。现在美国同时得罪中俄两国，美国不用玩了，不可能有实力同时和中俄两大国对抗#武统[超话]# http://t.cn/A6SzgN0R ​"
+        },
+    ],
+    tableDataZKT_20: [
+        {
+            column1: "20",
+            column2: "澎湃新闻",
+            column3: "【#英外相称若当选首相不会访问台湾#，曾表态支持佩洛西访台】8月4日，英国外交大臣特拉斯接受天空新闻台采访时表示，若她当选首相，不会访问台湾。但此前，特拉斯曾表示支持佩洛西访台。#完全有决心有办法有能力维护国家统一#http://t.cn/A6SPCIn7 http://t.cn/A6SPCC4v ​"
+        },
+    ],
       
       tableData1: [{
           date: 'S（真实值）',
@@ -1630,4 +4167,3 @@
     height:100vh
   }
 </style>
-

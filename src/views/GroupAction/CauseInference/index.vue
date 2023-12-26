@@ -270,6 +270,17 @@
                    </template>
               </el-col>
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+              <h2> 事件情感分析</h2>
+
+              <el-row>
+
+                         <div
+                          id="chart-user_2"
+                          style="width: 1200px; height: 600px;
+                          margin-top: 0px;margin-bottom: 0px;margin-right: 0px"
+           ></div>
+           </el-row>
+
               <h2> 事件因果关系图</h2>
 
               <el-row>
@@ -280,10 +291,21 @@
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px"
            ></div>
            </el-row>
+
                 </el-col>
 
-             <div id="node-description"></div>
 
+             <div class="container">
+             <label for="scene">选择事件：</label>
+                  <el-select id="scene" v-model="selectedNode" @change="updateChart">
+                    <el-option v-for="(node, index) in nodes" :key="index" :label="node" :value="index"></el-option>
+                     </el-select>
+                     <div class="side-by-side">
+                     <div  ref="chart" class="chart" style="width: 1000px; height: 400px;
+                          margin-top: 0px;margin-bottom: 0px;margin-right: 0px;"></div>
+                     <div id="node-description" style="width: 1000px; height: 200px;" ></div>
+                     </div>
+             </div>
 
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
               <div ref="chartContainer" class="chart-container"></div>
@@ -331,6 +353,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                       </el-table>
                     </el-col>
                   </template>
@@ -344,6 +367,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                       </el-table>
                     </el-col>
                   </template>
@@ -357,6 +381,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -369,6 +394,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -382,6 +408,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -395,6 +422,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -408,6 +436,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -421,6 +450,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -434,6 +464,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -447,6 +478,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -462,6 +494,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -475,6 +508,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -488,6 +522,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -503,6 +538,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -516,6 +552,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -529,6 +566,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -542,6 +580,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -555,6 +594,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -568,6 +608,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -581,6 +622,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -594,6 +636,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -607,6 +650,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -620,6 +664,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -635,6 +680,7 @@
                         <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
                         <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
                         <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
+                        <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -770,6 +816,111 @@
         selectedScene:'请选择事件',
         selectedScene2:'请选择事件',
         selectedScene3:'请选择事件',
+
+        selectedNode: '请选择事件',
+        nodes:["佩洛西窜访台湾六宗罪", "解放军全程跟踪迫使佩洛西专机绕道菲律宾","佩洛西访问台湾是危险的挑衅行为","拜登回应佩洛西窜台","国台办回应蔡英文为佩洛西授勋","国防部回应取消中美两军三项交往活动", "美国游说公司借佩洛西窜台赚黑金", "解放军空军苏-35战机穿越台湾海峡",
+      "中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神","东部战区组织环台岛战备警巡","美官方忧中国对佩洛西访台设禁飞区","解放军在台岛以东设靶逼退里根号","特朗普称佩洛西窜台是在帮中国圆梦",
+      "台海局势观察","华春莹称中国身后是160多个国家","佩洛西丈夫在港公司或被列入国家制裁","武统","佩洛西访台纯粹是针对中国的挑衅","佩洛西到哪了","外交部回应佩洛西最新涉台言论","台湾网友吐槽台当局\n赢了嘴炮苦了人民","王毅称佩洛西窜台\n是彻头彻尾的政治闹剧",
+      "佩洛西窜访后\n台海进入新常态"],
+
+       nodes_data:[
+			{"name": "佩洛西窜访台湾六宗罪", "value":"250"},
+			{"name": "解放军全程跟踪迫使佩洛西专机绕道菲律宾", "value":"350"},
+			{"name": "佩洛西访问台湾是危险的挑衅行为", "value":"150"},
+			{"name": "拜登回应佩洛西窜台", "value":"100"},
+			{"name": "国台办回应蔡英文为佩洛西授勋", "value":"450"},
+			{"name": "国防部回应取消中美两军三项交往活动", "value":"50"},
+			{"name": "美国游说公司借佩洛西窜台赚黑金", "value":"490"},
+			{"name": "解放军空军苏-35战机穿越台湾海峡","value":"180"},
+			{"name": "中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神","value":"300"},
+
+			{"name": "东部战区组织环台岛战备警巡","value":"0"},
+			{"name": "美官方忧中国对佩洛西访台设禁飞区","value":"530"},
+			{"name": "解放军在台岛以东设靶逼退里根号", "value":"400"},
+
+			{"name": "特朗普称佩洛西窜台是在帮中国圆梦", "value":"150"},
+			{"name": "台海局势观察", "value":"50"},
+			{"name": "华春莹称中国身后是160多个国家", "value":"500"},
+			{"name": "佩洛西丈夫在港公司或被列入国家制裁","value":"450"},
+			{"name": "武统","value":"0"},
+			{"name": "佩洛西访台纯粹是针对中国的挑衅", "value":"400"},
+			{"name": "佩洛西到哪了", "value":"320"},
+			{"name": "外交部回应佩洛西最新涉台言论", "value":"150"},
+			{"name": "台湾网友吐槽台当局\n赢了嘴炮苦了人民", "value":"100"},
+			{"name": "王毅称佩洛西窜台是\n彻头彻尾的政治闹剧", "value":"350"},
+
+			{"name": "佩洛西窜访后\n台海进入新常态", "value":"250"},
+		],
+
+        link:[
+			{'source': 16, 'target': 18, 'weight': 0.5196008261589741, 'edgeDescriptions': "source:武统[超话], target:佩洛西到哪了[超话], weight:0.5196008261589741"},
+{'source': 14, 'target': 18, 'weight': 0.37693564877349817, 'edgeDescriptions': 'source:华春莹称中国身后是160多个国家, target:佩洛西到哪了[超话], weight:0.37693564877349817'},
+{'source': 17, 'target': 18, 'weight': 0.02235052760056439, 'edgeDescriptions': 'source:佩洛西访台纯粹是针对中国的挑衅, target:佩洛西到哪了[超话], weight:0.02235052760056439'},
+{'source': 1, 'target': 17, 'weight': 0.8540949316170554, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.8540949316170554'},
+{'source': 7, 'target': 17, 'weight': 0.7706461639527741, 'edgeDescriptions': 'source:解放军空军苏-35战机穿越台湾海峡, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.7706461639527741'},
+{'source': 9, 'target': 17, 'weight': 0.5740625224922626, 'edgeDescriptions': 'source:东部战区组织环台岛战备警巡, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.5740625224922626'},
+{'source': 13, 'target': 22, 'weight': 0.880620879077388, 'edgeDescriptions': 'source:台海局势观察, target:佩洛西窜访后台海进入新常态, weight:0.880620879077388'},
+{'source': 20, 'target': 22, 'weight': 0.8445121607556838, 'edgeDescriptions': 'source:台湾网友吐槽台当局赢了嘴炮苦了人民, target:佩洛西窜访后台海进入新常态, weight:0.8445121607556838'},
+{'source': 15, 'target': 22, 'weight': 0.8312619576031223, 'edgeDescriptions': 'source:佩洛西丈夫在港公司或被列入国家制裁, target:佩洛西窜访后台海进入新常态, weight:0.8312619576031223'},
+{'source': 8, 'target': 10, 'weight': 0.07442906574394464, 'edgeDescriptions': 'source:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.07442906574394464'},
+{'source': 9, 'target': 10, 'weight': 0.04811509532296566, 'edgeDescriptions': 'source:东部战区组织环台岛战备警巡, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.04811509532296566'},
+{'source': 5, 'target': 10, 'weight': 0.040611173924583424, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.040611173924583424'},
+{'source': 4, 'target': 20, 'weight': 0.7614284541187915, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.7614284541187915'},
+{'source': 13, 'target': 20, 'weight': 0.5107066811297256, 'edgeDescriptions': 'source:台海局势观察, target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.5107066811297256'},
+{'source': 18, 'target': 20, 'weight': 0.24011231768338123, 'edgeDescriptions': 'source:佩洛西到哪了[超话], target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.24011231768338123'},
+{'source': 1, 'target': 7, 'weight': 0.20576126614732285, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:解放军空军苏-35战机穿越台湾海峡, weight:0.20576126614732285'},
+{'source': 5, 'target': 7, 'weight': 0.0994340063017855, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:解放军空军苏-35战机穿越台湾海峡, weight:0.0994340063017855'},
+{'source': 6, 'target': 7, 'weight': 0.07810606357543211, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:解放军空军苏-35战机穿越台湾海峡, weight:0.07810606357543211'},
+{'source': 0, 'target': 2, 'weight': 0.014542972385659473, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:佩洛西访问台湾是危险的挑衅行为, weight:0.014542972385659473'},
+{'source': 1, 'target': 2, 'weight': 0.00029201948243492927, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西访问台湾是危险的挑衅行为, weight:0.00029201948243492927'},
+{'source': 1, 'target': 12, 'weight': 0.46166307485529967, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.46166307485529967'},
+{'source': 6, 'target': 12, 'weight': 0.08036890645586296, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.08036890645586296'},
+{'source': 3, 'target': 12, 'weight': 0.042872028054304, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.042872028054304'},
+{'source': 7, 'target': 11, 'weight': 0.22426954857581866, 'edgeDescriptions': 'source:解放军空军苏-35战机穿越台湾海峡, target:解放军在台岛以东设靶逼退里根号, weight:0.22426954857581866'},
+{'source': 10, 'target': 11, 'weight': 0.019987424729752602, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:解放军在台岛以东设靶逼退里根号, weight:0.019987424729752602'},
+{'source': 8, 'target': 11, 'weight': 0.017244744642508587, 'edgeDescriptions': 'source:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, target:解放军在台岛以东设靶逼退里根号, weight:0.017244744642508587'},
+{'source': 5, 'target': 8, 'weight': 0.6092378174642795, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.6092378174642795'},
+{'source': 6, 'target': 8, 'weight': 0.2287203325181979, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.2287203325181979'},
+{'source': 4, 'target': 8, 'weight': 0.11969423324191546, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.11969423324191546'},
+{'source': 5, 'target': 21, 'weight': 0.839584114858643, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.839584114858643'},
+{'source': 0, 'target': 21, 'weight': 0.7473468857229126, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.7473468857229126'},
+{'source': 20, 'target': 21, 'weight': 0.6672517336912567, 'edgeDescriptions': 'source:台湾网友吐槽台当局赢了嘴炮苦了人民, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.6672517336912567'},
+{'source': 2, 'target': 5, 'weight': 0.38445021645021604, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:国防部回应取消中美两军三项交往活动, weight:0.38445021645021604'},
+{'source': 4, 'target': 5, 'weight': 0.29869571252080246, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:国防部回应取消中美两军三项交往活动, weight:0.29869571252080246'},
+{'source': 3, 'target': 5, 'weight': 0.04202895803200468, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:国防部回应取消中美两军三项交往活动, weight:0.04202895803200468'},
+{'source': 0, 'target': 6, 'weight': 0.6996565620137147, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:美国游说公司借佩洛西窜台赚黑金, weight:0.6996565620137147'},
+{'source': 4, 'target': 6, 'weight': 0.6588152611632695, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:美国游说公司借佩洛西窜台赚黑金, weight:0.6588152611632695'},
+{'source': 5, 'target': 6, 'weight': 0.23098837271150918, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:美国游说公司借佩洛西窜台赚黑金, weight:0.23098837271150918'},
+{'source': 6, 'target': 13, 'weight': 0.013651051856411158, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:台海局势观察, weight:0.013651051856411158'},
+{'source': 10, 'target': 13, 'weight': 0.0076716390252941705, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:台海局势观察, weight:0.0076716390252941705'},
+{'source': 12, 'target': 13, 'weight': 0.0038113475046721223, 'edgeDescriptions': 'source:特朗普称佩洛西窜台是在帮中国圆梦, target:台海局势观察, weight:0.0038113475046721223'},
+{'source': 16, 'target': 19, 'weight': 0.2677540914966048, 'edgeDescriptions': 'source:武统[超话], target:外交部回应佩洛西最新涉台言论, weight:0.2677540914966048'},
+{'source': 13, 'target': 19, 'weight': 0.20215637078727877, 'edgeDescriptions': 'source:台海局势观察, target:外交部回应佩洛西最新涉台言论, weight:0.20215637078727877'},
+{'source': 18, 'target': 19, 'weight': 0.12556860341323353, 'edgeDescriptions': 'source:佩洛西到哪了[超话], target:外交部回应佩洛西最新涉台言论, weight:0.12556860341323353'},
+{'source': 2, 'target': 9, 'weight': 0.13262221506631497, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:东部战区组织环台岛战备警巡, weight:0.13262221506631497'},
+{'source': 1, 'target': 9, 'weight': 0.10715499237552215, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:东部战区组织环台岛战备警巡, weight:0.10715499237552215'},
+{'source': 6, 'target': 9, 'weight': 0.02057912824526183, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:东部战区组织环台岛战备警巡, weight:0.02057912824526183'},
+{'source': 2, 'target': 3, 'weight': 0.1591753695730336, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:拜登回应佩洛西窜台, weight:0.1591753695730336'},
+{'source': 0, 'target': 3, 'weight': 0.020063616266981756, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:拜登回应佩洛西窜台, weight:0.020063616266981756'},
+{'source': 1, 'target': 3, 'weight': 0.004379559274120872, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:拜登回应佩洛西窜台, weight:0.004379559274120872'},
+{'source': 1, 'target': 14, 'weight': 0.5001984450726089, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:华春莹称中国身后是160多个国家, weight:0.5001984450726089'},
+{'source': 0, 'target': 14, 'weight': 0.1369941730069882, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:华春莹称中国身后是160多个国家, weight:0.1369941730069882'},
+{'source': 4, 'target': 14, 'weight': 0.11635066861618687, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:华春莹称中国身后是160多个国家, weight:0.11635066861618687'},
+{'source': 4, 'target': 15, 'weight': 0.7000246938127569, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.7000246938127569'},
+{'source': 1, 'target': 15, 'weight': 0.2819954446120226, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.2819954446120226'},
+{'source': 13, 'target': 15, 'weight': 0.24626642771804066, 'edgeDescriptions': 'source:台海局势观察, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.24626642771804066'},
+{'source': 10, 'target': 16, 'weight': 0.4168516627447498, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:武统[超话], weight:0.4168516627447498'},
+{'source': 6, 'target': 16, 'weight': 0.3689627288098214, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:武统[超话], weight:0.3689627288098214'},
+{'source': 14, 'target': 16, 'weight': 0.3490193788426085, 'edgeDescriptions': 'source:华春莹称中国身后是160多个国家, target:武统[超话], weight:0.3490193788426085'},
+{'source': 1, 'target': 4, 'weight': 0.32317481829543226, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:国台办回应蔡英文为佩洛西授勋, weight:0.32317481829543226'},
+{'source': 2, 'target': 4, 'weight': 0.2735580633231504, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:国台办回应蔡英文为佩洛西授勋, weight:0.2735580633231504'},
+{'source': 3, 'target': 4, 'weight': 0.08616097124552667, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:国台办回应蔡英文为佩洛西授勋, weight:0.08616097124552667'},
+{'source': 0, 'target': 1, 'weight': 0.010741453264749365, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:解放军全程跟踪迫使佩洛西专机绕道菲律宾, weight:0.010741453264749365'}
+
+
+		],
+         chart: null, // 图表对象
+
         tableData_event_pelosi: [
           { column1: '佩洛西窜访台湾六宗罪', column2: '468'},
           { column1: '解放军全程跟踪迫使佩洛西专机绕道菲律宾', column2: '185'},
@@ -888,6 +1039,7 @@
 
     mounted(){
        this.myEcharts();
+       this.initChart();
     },
 
 
@@ -895,11 +1047,14 @@
 
     methods: {
 
+
+
       myEcharts() {
       // 基于准备好的dom，初始化echarts实例
       var myChart = this.$echarts.init(document.getElementById("chart-user_1"));
-
+      var myChart_2 = this.$echarts.init(document.getElementById("chart-user_2"));
       // 指定图表的配置项和数据
+
 
 
       const axisData = ["佩洛西窜访台湾六宗罪", "解放军全程跟踪迫使佩洛西专机绕道菲律宾","佩洛西访问台湾是危险的挑衅行为","拜登回应佩洛西窜台","国台办回应蔡英文为佩洛西授勋","国防部回应取消中美两军三项交往活动", "美国游说公司借佩洛西窜台赚黑金", "解放军空军苏-35战机穿越台湾海峡",
@@ -1049,7 +1204,81 @@
       "#佩洛西窜访后台海进入新常态# \n -------------------------- \n 前序事件: \n 1)台海局势观察 \n 2)佩洛西丈夫在港公司或被列入国家制裁 \n 3)台湾网友吐槽台当局赢了嘴炮苦了人民"];
 
 
+     var option_2 = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      // Use axis to trigger tooltip
+      type: 'line' // 'shadow' as default; can also be 'line' or 'shadow'
+    }
+  },
+  legend: {},
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: {
+    type: 'value'
+  },
+  yAxis: {
+    type: 'category',
+    data: axisData,
+  },
+  series: [
+    {
+      name: '消极',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true,
+         formatter: (params) => {
+        const percentage = (params.value);
+        return `${percentage}%`;
+      }
+      },
+      emphasis: {
+        focus: 'series',
 
+      },
+      data: [30, 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30]
+    },
+    {
+      name: '中性',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true,
+        formatter: (params) => {
+        const percentage = (params.value);
+        return `${percentage}%`;
+      }
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [40, 40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40]
+    },
+    {
+      name: '积极',
+      type: 'bar',
+      stack: 'total',
+      label: {
+        show: true,
+        formatter: (params) => {
+        const percentage = (params.value);
+        return `${percentage}%`;
+      }
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [30, 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30]
+    },
+
+  ]
+};
 
 
       var option = {
@@ -1123,6 +1352,62 @@
 
      myChart.setOption(option);
 
+     var option_pie = {
+  title: {
+    text: '佩洛西访台情感分析',
+    subtext: '',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item',
+    formatter: function(params) {
+      var data = params.data;
+      return `${data.name}: ${data.value}%`;
+    },
+    position: ['50%', '50%'],  // 设置提示框位置在饼图中心
+    textStyle: { fontSize: 14 },
+    extraCssText: 'text-align: center;'  // 居中显示文本
+  },
+  legend: {
+    orient: 'vertical',
+    left: 'left'
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '50%',
+      selectedMode: 'single',
+      data: [
+        { value: 33.2, name: '消极' },
+        { value: 41.6, name: '中性' },
+        { value: 26.2, name: '积极' },
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        },
+        textBorderColor: '#fff',
+        textBorderWidth: 2,
+        textShadowBlur: 5,
+        textShadowColor: '#000',
+        formatter: function(params) {
+          return params.name + '：' + params.value + '%'+'<br/>' + params.seriesName + '：' + params.percent + '%';
+        },
+        position: 'right'
+      }
+    }
+  ]
+};
+
+
+
+
+     myChart_2.setOption(option_pie)
+
+
 
      myChart.on('click', function(params) {
   if (params.dataType === 'node') {
@@ -1139,6 +1424,316 @@
 });
 
       },
+
+      initChart() {
+      // 初始化图表实例
+      this.chartInstance = echarts.init(this.$refs.chart);
+
+      // 设置初始数据和选项
+      const options = {
+        series: [
+          {
+            type: 'graph',
+
+            // 其他配置项...
+          }
+        ]
+      };
+
+      // 将初始选项应用于图表
+      this.chartInstance.setOption(options);
+
+      this.chartInstance.on('click', (params) => {
+        if (params.dataType === 'node') {
+          // 当点击的是节点时
+          this.updateChart(params.data.id);
+          const nodeId = params.data.id;
+          const nodeDescription = this.getNodeDescription(nodeId);
+          document.getElementById("node-description").innerText = nodeDescription;
+          this.updateChart(nodeId);
+
+        } else if (params.dataType === 'edge') {
+          // 当点击的是边时
+          const edgeIndex = params.dataIndex;
+          const edgeDescription = this.edgeDescriptions[edgeIndex];
+          document.getElementById("edge-description").innerText = edgeDescription;
+          document.getElementById("node-description").innerText = "";
+        }
+      });
+    },
+    updateChart(nodeId) {
+      // 在选择器的选项改变时触发的方法
+      // 获取选中的节点
+
+      const selectedNodeID = this.selectedNode;
+      const data = [
+			{"id":0,"name": "佩洛西窜访台湾六宗罪", "value":"250"},
+			{"id":1,"name": "解放军全程跟踪迫使佩洛西专机绕道菲律宾", "value":"350"},
+			{"id":2,"name": "佩洛西访问台湾是危险的挑衅行为", "value":"150"},
+			{"id":3,"name": "拜登回应佩洛西窜台", "value":"100"},
+			{"id":4,"name": "国台办回应蔡英文为佩洛西授勋", "value":"450"},
+			{"id":5,"name": "国防部回应取消中美两军三项交往活动", "value":"50"},
+			{"id":6,"name": "美国游说公司借佩洛西窜台赚黑金", "value":"490"},
+			{"id":7,"name": "解放军空军苏-35战机穿越台湾海峡","value":"180"},
+			{"id":8,"name": "中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神","value":"300"},
+			{"id":9,"name": "东部战区组织环台岛战备警巡","value":"0"},
+			{"id":10,"name": "美官方忧中国对佩洛西访台设禁飞区","value":"530"},
+			{"id":11,"name": "解放军在台岛以东设靶逼退里根号", "value":"400"},
+			{"id":12,"name": "特朗普称佩洛西窜台是在帮中国圆梦", "value":"150"},
+			{"id":13,"name": "台海局势观察", "value":"50"},
+			{"id":14,"name": "华春莹称中国身后是160多个国家", "value":"500"},
+			{"id":15,"name": "佩洛西丈夫在港公司或被列入国家制裁","value":"450"},
+			{"id":16,"name": "武统","value":"0"},
+			{"id":17,"name": "佩洛西访台纯粹是针对中国的挑衅", "value":"400"},
+			{"id":18,"name": "佩洛西到哪了", "value":"320"},
+			{"id":19,"name": "外交部回应佩洛西最新涉台言论", "value":"150"},
+			{"id":20,"name": "台湾网友吐槽台当局赢了嘴炮苦了人民", "value":"100"},
+			{"id":21,"name": "王毅称佩洛西窜台是彻头彻尾的政治闹剧", "value":"350"},
+			{"id":22,"name": "佩洛西窜访后台海进入新常态", "value":"250"},
+
+		];
+
+       const links_node =  [
+			{'source': 16, 'target': 18, 'weight': 0.5196008261589741, 'edgeDescriptions': "source:武统[超话], target:佩洛西到哪了[超话], weight:0.5196008261589741"},
+{'source': 14, 'target': 18, 'weight': 0.37693564877349817, 'edgeDescriptions': 'source:华春莹称中国身后是160多个国家, target:佩洛西到哪了[超话], weight:0.37693564877349817'},
+{'source': 17, 'target': 18, 'weight': 0.02235052760056439, 'edgeDescriptions': 'source:佩洛西访台纯粹是针对中国的挑衅, target:佩洛西到哪了[超话], weight:0.02235052760056439'},
+{'source': 1, 'target': 17, 'weight': 0.8540949316170554, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.8540949316170554'},
+{'source': 7, 'target': 17, 'weight': 0.7706461639527741, 'edgeDescriptions': 'source:解放军空军苏-35战机穿越台湾海峡, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.7706461639527741'},
+{'source': 9, 'target': 17, 'weight': 0.5740625224922626, 'edgeDescriptions': 'source:东部战区组织环台岛战备警巡, target:佩洛西访台纯粹是针对中国的挑衅, weight:0.5740625224922626'},
+{'source': 13, 'target': 22, 'weight': 0.880620879077388, 'edgeDescriptions': 'source:台海局势观察, target:佩洛西窜访后台海进入新常态, weight:0.880620879077388'},
+{'source': 20, 'target': 22, 'weight': 0.8445121607556838, 'edgeDescriptions': 'source:台湾网友吐槽台当局赢了嘴炮苦了人民, target:佩洛西窜访后台海进入新常态, weight:0.8445121607556838'},
+{'source': 15, 'target': 22, 'weight': 0.8312619576031223, 'edgeDescriptions': 'source:佩洛西丈夫在港公司或被列入国家制裁, target:佩洛西窜访后台海进入新常态, weight:0.8312619576031223'},
+{'source': 8, 'target': 10, 'weight': 0.07442906574394464, 'edgeDescriptions': 'source:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.07442906574394464'},
+{'source': 9, 'target': 10, 'weight': 0.04811509532296566, 'edgeDescriptions': 'source:东部战区组织环台岛战备警巡, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.04811509532296566'},
+{'source': 5, 'target': 10, 'weight': 0.040611173924583424, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:美官方忧中国对佩洛西访台设禁飞区, weight:0.040611173924583424'},
+{'source': 4, 'target': 20, 'weight': 0.7614284541187915, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.7614284541187915'},
+{'source': 13, 'target': 20, 'weight': 0.5107066811297256, 'edgeDescriptions': 'source:台海局势观察, target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.5107066811297256'},
+{'source': 18, 'target': 20, 'weight': 0.24011231768338123, 'edgeDescriptions': 'source:佩洛西到哪了[超话], target:台湾网友吐槽台当局赢了嘴炮苦了人民, weight:0.24011231768338123'},
+{'source': 1, 'target': 7, 'weight': 0.20576126614732285, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:解放军空军苏-35战机穿越台湾海峡, weight:0.20576126614732285'},
+{'source': 5, 'target': 7, 'weight': 0.0994340063017855, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:解放军空军苏-35战机穿越台湾海峡, weight:0.0994340063017855'},
+{'source': 6, 'target': 7, 'weight': 0.07810606357543211, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:解放军空军苏-35战机穿越台湾海峡, weight:0.07810606357543211'},
+{'source': 0, 'target': 2, 'weight': 0.014542972385659473, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:佩洛西访问台湾是危险的挑衅行为, weight:0.014542972385659473'},
+{'source': 1, 'target': 2, 'weight': 0.00029201948243492927, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西访问台湾是危险的挑衅行为, weight:0.00029201948243492927'},
+{'source': 1, 'target': 12, 'weight': 0.46166307485529967, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.46166307485529967'},
+{'source': 6, 'target': 12, 'weight': 0.08036890645586296, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.08036890645586296'},
+{'source': 3, 'target': 12, 'weight': 0.042872028054304, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:特朗普称佩洛西窜台是在帮中国圆梦, weight:0.042872028054304'},
+{'source': 7, 'target': 11, 'weight': 0.22426954857581866, 'edgeDescriptions': 'source:解放军空军苏-35战机穿越台湾海峡, target:解放军在台岛以东设靶逼退里根号, weight:0.22426954857581866'},
+{'source': 10, 'target': 11, 'weight': 0.019987424729752602, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:解放军在台岛以东设靶逼退里根号, weight:0.019987424729752602'},
+{'source': 8, 'target': 11, 'weight': 0.017244744642508587, 'edgeDescriptions': 'source:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, target:解放军在台岛以东设靶逼退里根号, weight:0.017244744642508587'},
+{'source': 5, 'target': 8, 'weight': 0.6092378174642795, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.6092378174642795'},
+{'source': 6, 'target': 8, 'weight': 0.2287203325181979, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.2287203325181979'},
+{'source': 4, 'target': 8, 'weight': 0.11969423324191546, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神, weight:0.11969423324191546'},
+{'source': 5, 'target': 21, 'weight': 0.839584114858643, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.839584114858643'},
+{'source': 0, 'target': 21, 'weight': 0.7473468857229126, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.7473468857229126'},
+{'source': 20, 'target': 21, 'weight': 0.6672517336912567, 'edgeDescriptions': 'source:台湾网友吐槽台当局赢了嘴炮苦了人民, target:王毅称佩洛西窜台是彻头彻尾的政治闹剧, weight:0.6672517336912567'},
+{'source': 2, 'target': 5, 'weight': 0.38445021645021604, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:国防部回应取消中美两军三项交往活动, weight:0.38445021645021604'},
+{'source': 4, 'target': 5, 'weight': 0.29869571252080246, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:国防部回应取消中美两军三项交往活动, weight:0.29869571252080246'},
+{'source': 3, 'target': 5, 'weight': 0.04202895803200468, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:国防部回应取消中美两军三项交往活动, weight:0.04202895803200468'},
+{'source': 0, 'target': 6, 'weight': 0.6996565620137147, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:美国游说公司借佩洛西窜台赚黑金, weight:0.6996565620137147'},
+{'source': 4, 'target': 6, 'weight': 0.6588152611632695, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:美国游说公司借佩洛西窜台赚黑金, weight:0.6588152611632695'},
+{'source': 5, 'target': 6, 'weight': 0.23098837271150918, 'edgeDescriptions': 'source:国防部回应取消中美两军三项交往活动, target:美国游说公司借佩洛西窜台赚黑金, weight:0.23098837271150918'},
+{'source': 6, 'target': 13, 'weight': 0.013651051856411158, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:台海局势观察, weight:0.013651051856411158'},
+{'source': 10, 'target': 13, 'weight': 0.0076716390252941705, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:台海局势观察, weight:0.0076716390252941705'},
+{'source': 12, 'target': 13, 'weight': 0.0038113475046721223, 'edgeDescriptions': 'source:特朗普称佩洛西窜台是在帮中国圆梦, target:台海局势观察, weight:0.0038113475046721223'},
+{'source': 16, 'target': 19, 'weight': 0.2677540914966048, 'edgeDescriptions': 'source:武统[超话], target:外交部回应佩洛西最新涉台言论, weight:0.2677540914966048'},
+{'source': 13, 'target': 19, 'weight': 0.20215637078727877, 'edgeDescriptions': 'source:台海局势观察, target:外交部回应佩洛西最新涉台言论, weight:0.20215637078727877'},
+{'source': 18, 'target': 19, 'weight': 0.12556860341323353, 'edgeDescriptions': 'source:佩洛西到哪了[超话], target:外交部回应佩洛西最新涉台言论, weight:0.12556860341323353'},
+{'source': 2, 'target': 9, 'weight': 0.13262221506631497, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:东部战区组织环台岛战备警巡, weight:0.13262221506631497'},
+{'source': 1, 'target': 9, 'weight': 0.10715499237552215, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:东部战区组织环台岛战备警巡, weight:0.10715499237552215'},
+{'source': 6, 'target': 9, 'weight': 0.02057912824526183, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:东部战区组织环台岛战备警巡, weight:0.02057912824526183'},
+{'source': 2, 'target': 3, 'weight': 0.1591753695730336, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:拜登回应佩洛西窜台, weight:0.1591753695730336'},
+{'source': 0, 'target': 3, 'weight': 0.020063616266981756, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:拜登回应佩洛西窜台, weight:0.020063616266981756'},
+{'source': 1, 'target': 3, 'weight': 0.004379559274120872, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:拜登回应佩洛西窜台, weight:0.004379559274120872'},
+{'source': 1, 'target': 14, 'weight': 0.5001984450726089, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:华春莹称中国身后是160多个国家, weight:0.5001984450726089'},
+{'source': 0, 'target': 14, 'weight': 0.1369941730069882, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:华春莹称中国身后是160多个国家, weight:0.1369941730069882'},
+{'source': 4, 'target': 14, 'weight': 0.11635066861618687, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:华春莹称中国身后是160多个国家, weight:0.11635066861618687'},
+{'source': 4, 'target': 15, 'weight': 0.7000246938127569, 'edgeDescriptions': 'source:国台办回应蔡英文为佩洛西授勋, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.7000246938127569'},
+{'source': 1, 'target': 15, 'weight': 0.2819954446120226, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.2819954446120226'},
+{'source': 13, 'target': 15, 'weight': 0.24626642771804066, 'edgeDescriptions': 'source:台海局势观察, target:佩洛西丈夫在港公司或被列入国家制裁, weight:0.24626642771804066'},
+{'source': 10, 'target': 16, 'weight': 0.4168516627447498, 'edgeDescriptions': 'source:美官方忧中国对佩洛西访台设禁飞区, target:武统[超话], weight:0.4168516627447498'},
+{'source': 6, 'target': 16, 'weight': 0.3689627288098214, 'edgeDescriptions': 'source:美国游说公司借佩洛西窜台赚黑金, target:武统[超话], weight:0.3689627288098214'},
+{'source': 14, 'target': 16, 'weight': 0.3490193788426085, 'edgeDescriptions': 'source:华春莹称中国身后是160多个国家, target:武统[超话], weight:0.3490193788426085'},
+{'source': 1, 'target': 4, 'weight': 0.32317481829543226, 'edgeDescriptions': 'source:解放军全程跟踪迫使佩洛西专机绕道菲律宾, target:国台办回应蔡英文为佩洛西授勋, weight:0.32317481829543226'},
+{'source': 2, 'target': 4, 'weight': 0.2735580633231504, 'edgeDescriptions': 'source:佩洛西访问台湾是危险的挑衅行为, target:国台办回应蔡英文为佩洛西授勋, weight:0.2735580633231504'},
+{'source': 3, 'target': 4, 'weight': 0.08616097124552667, 'edgeDescriptions': 'source:拜登回应佩洛西窜台, target:国台办回应蔡英文为佩洛西授勋, weight:0.08616097124552667'},
+{'source': 0, 'target': 1, 'weight': 0.010741453264749365, 'edgeDescriptions': 'source:佩洛西窜访台湾六宗罪, target:解放军全程跟踪迫使佩洛西专机绕道菲律宾, weight:0.010741453264749365'}
+
+
+		];
+
+
+		const nodeDescriptions = ["#佩洛西窜访台湾六宗罪#:首先就是佩洛西窜访台湾严重违反美方在中美三个联合公报中所作承诺，属于背信弃义。第二则是践踏了法制，佩洛西窜访台湾严重违反一个中国原则，这一原则是国际社会的普遍共识和公认的国际关系基本准则。第三就是破坏了区域和平，佩洛西窜台是美纵容支持“台独”分裂势力的最新例证，严重破坏台海和平和地区稳定，美国应该也必须为此负全部责任。第四则是佩洛西涉嫌干涉中国内政。第五则是佩洛西进行的政治操弄，佩洛西所作所为绝不是为了捍卫民主，而是打着“民主”的幌子，侵犯中国主权、破坏中国稳定、遏制中国发展，是赤裸裸的政治操弄。第六则是她以权谋私，佩洛西妄图借打“台湾牌”获得“政治加分”，留下所谓政治遗产。",
+
+		"#解放军全程跟踪迫使佩洛西专机绕道菲律宾#:佩洛西专机起飞后，解放军全程跟踪监控，迫使佩洛西专机舍近求远，绕到菲律宾上空后再回到台湾松山机场\n -------------------------- \n 前序事件：\n 1)佩洛西窜访台湾六宗罪",
+		"安理会轮值主席、中国常驻联合国代表张军就安理会8月工作在纽约联合国总部向媒体吹风时，就台湾问题、美国众议长佩洛西访台表明立场。安理会轮值主席、中国常驻联合国代表张军就安理会8月工作在纽约联合国总部向媒体吹风时，就台湾问题、美国众议长佩洛西访台表明立场。\n -------------------------- \n 前序事件：\n 1)佩洛西窜访台湾六宗罪 \n 2)佩洛西访问台湾是危险的挑衅行为",
+		"#拜登回应佩洛西窜台#:众议院议长南希·佩洛西窜访台湾后，国际局势紧张加剧。拜登表示，他“关心”但“不担心”中国在台湾附近的军事行动，“我不感到忧虑，我注意到中方的行动部署得十分频繁，我不认为他们会有更进一步的行动。\n -------------------------- \n 前序事件: \n 1)佩洛西窜访台湾六宗罪\n 2)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 3)佩洛西访问台湾是危险的挑衅行动",
+
+		"#国台办回应蔡英文为佩洛西授勋#:国台办负责人马晓光应询说，佩洛西窜访台湾是台美实质关系升级的重大事件。佩此次窜台是其一贯顽固挺台反华错误言行的进一步发展，性质十分恶劣。我们严厉谴责和强烈抗议，并已宣布一系列坚决有力的反制措施。民进党当局在“倚美谋独”的分裂道路上一条道走到黑，留下一连串奴颜婢膝的劣迹，必将付出越来越难以承受的代价，只能以失败告终。至于那个所谓“勋章”，大家都知道，以“撒谎、欺骗、偷盗”为荣、品行恶劣的蓬佩奥之流接受过此类“勋章”，可以想象民进党当局给佩洛西“授勋”是怎么一场政治闹剧。\n -------------------------- \n 前序事件: \n 1)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 2)佩洛西访问台湾是危险的挑衅行动 \n 3)拜登回应佩洛西窜台",
+		"#国防部回应取消中美两军三项交往活动#:国防部发言人吴谦作出回应，当前台海形势紧张局面，完全是美方主动挑衅、一手制造的，美方必须为此承担全部责任和严重后果。中方曾就中美两国两军关系、台湾问题等表明严正立场，特别是针对美国会众议长佩洛西窜访多次严正交涉，美方却说一套、做一套，纵容支持佩窜访，蓄意制造台海紧张局势。吴谦表示，针对美方恶劣挑衅行径，中方宣布了八项反制措施，其中包括取消安排中美两军战区领导通话、取消中美国防部工作会晤、取消中美海上军事安全磋商机制会议。中方有关反制措施是对美台挑衅的必要警示，对国家主权和安全的正当捍卫，完全合理、恰当适度。\n -------------------------- \n  前序事件: \n 1)佩洛西访问台湾是危险的挑衅行动 \n 2)拜登回应佩洛西窜台\n 3)国台办回应蔡英文为佩洛西授勋",
+		 "#美国游说公司借佩洛西窜台赚黑金#:有台灣網友爆料稱“台當局支付300萬美元游說佩洛西”，但該說法被台灣地區主管“外交”的部門矢口否認。@起底工作室 順藤摸瓜，調查了網友提到的格普哈特公司（Gephardt）和台北經濟文化代表處（TECRO）。據美國司法部數據，TECRO早在2013年就與格普哈特簽訂了合同，每月需支付相應的服務費并一直保持至今，共計支付384萬美元。此外，交易記錄中還有多筆26美元的賬單，這是格普哈特到美國國會往返的出租車費。即便是從台灣當局那賺得盆滿鉢滿，美國游說公司也不忘記報銷車費。\n -------------------------- \n 前序事件: \n 1)佩洛西窜访台湾六宗罪 \n 2)国台办回应蔡英文为佩洛西授勋 \n 3)国防部回应取消中美两军三项交往活动",
+		  "#解放军空军苏-35战机穿越台湾海峡#:中国人民解放军空军苏-35战机正在穿越台湾海峡。\n -------------------------- \n 前序事件: \n 1)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 2)国防部回应取消中美两军三项交往活动 \n 3)美国游说公司借佩洛西窜台赚黑金",
+      "#中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神#:中国驻美国大使秦刚在出席福布斯第四届美中商业论坛时指出，美国众议长佩洛西执意窜访中国台湾地区严重违背了美方在台湾问题上的承诺，有违契约精神。秦刚表示，美国众议长佩洛西窜访中国台湾地区严重违反一个中国原则和中美三个联合公报规定，严重冲击中美关系政治基础，严重侵犯中国主权和领土完整，严重破坏台海和平稳定。\n -------------------------- \n 前序事件:\n 1)国台办回应蔡英文为佩洛西授勋 \n 2)国防部回应取消中美两军三项交往活动 \n 3)美国游说公司借佩洛西窜台赚黑金",
+
+
+      "#东部战区组织环台岛战备警巡#:中国人民解放军东部战区按计划于4月8日至10日在台湾海峡和台岛北部、南部、台岛以东海空域组织环台岛战备警巡和“联合利剑”演习。国防大学国家安全学院副教授张弛接受中新社记者专访时指出，此次全军兵种联合行动，塑造全向围岛慑压态势，山东舰航母编队出第一岛链进行部署，战巡、演习相结合可能会成为解放军今后惩戒“台独”分裂势力的新模式。\n -------------------------- \n  前序事件:\n 1)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 2)佩洛西访问台湾是危险的挑衅行为 \n 3)美国游说公司借佩洛西窜台赚黑金",
+      "#美官方忧中国对佩洛西访台设禁飞区#:美国不具名官员向美国有线电视网（CNN）透露，拜登政府官员担心，在美国众议长佩洛西可能访问台湾之前，中国可能寻求在台湾岛上空划设禁飞区，还可能派出战机进一步进入台湾自行宣布的“防空识别区”。\n -------------------------- \n 前序事件: \n 1)国防部回应取消中美两军三项交往活动 \n 2)中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神 \n 3)东部战区组织环台岛战备警巡",
+      "#解放军在台岛以东设靶逼退里根号#:中国人民解放军在台岛周边海空域进行重要军事演训行动，并组织实弹射击。国防大学教授孟祥青介绍：此次台海演习，①航母编队首次威慑性演练，核潜艇参演，构建了海上立体式的作战体系；②首次在台岛以东设置靶场，将当时给佩洛西护航的美国“里根”号航母舰，逼退约几百公里。\n -------------------------- \n 前序事件: \n 1)国防部回应取消中美两军三项交往活动 \n 2)中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神 \n 3)美官方忧中国对佩洛西访台设禁飞区",
+
+      "#特朗普称佩洛西窜台是在帮中国圆梦#:特朗普声称，佩洛西窜访台湾“助力了中国梦”，因为她给了中方“一直在寻找的借口”，中方现在可以去做他们正在做的任何事情。特朗普还强调，如果美国在特朗普的领导下，这种事情永远不会发生。特朗普在佩洛西窜台之前，就明确表示了反对。特朗普的反对并不是为了美国好，根本目的还是为了自己牟利，这是共和党人的一个策略，佩洛西坚持要去，共和党人就会站在对立面。\n -------------------------- \n  前序事件: \n 1)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 2)拜登回应佩洛西窜台 \n 3)东部战区组织环岛战备警巡",
+      "#台海局势观察#:8月2日晚开始，中国人民解放军东部战区陆续在台岛周边开展一系列联合军事行动，在台岛北部、西南、东南海空域进行联合海空演训，将在台湾海峡进行远程火力实弹射击。 \n -------------------------- \n  前序事件: \n 1)美国游说公司借佩洛西窜台赚黑金 \n 2)美官方忧中国对佩洛西访台设禁飞区 \n 3)特朗普称佩洛西窜台是在帮中国圆梦",
+      "#华春莹称中国身后是160多个国家#:中国外交部发言人华春莹8月5日在例行记者会上称，佩洛西窜台事件发生以来，已有160多个国家发出了正义的声音。现在中国的身后是160多个国家，共同站在历史正确的一边，站在公平正义的一边。 \n -------------------------- \n 前序事件: \n 1)佩洛西窜访台湾六宗罪 \n 2)解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 3)国台办回应蔡英文为佩洛西授勋",
+
+      "#佩洛西丈夫在港公司或被列入国家制裁#:外交部周五宣布，针对美国国会众议长佩洛西恶劣挑衅行径，对佩洛西及其直系亲属依法采取制裁措施。\n -------------------------- \n 前序事件: \n 1) 解放军全程跟踪迫使佩洛西专机绕道菲律宾 \n 2)国台办回应蔡英文为佩洛西授勋 \n 3)台海局势观察",
+      "武统 \n -------------------------- \n 前序事件: \n 1)美国游说公司借佩洛西窜台赚黑金 \n 2)美官方忧中国对佩洛西访台设禁飞区 \n 3)华春莹称中国身后是160多个国家",
+      "#佩洛西访台纯粹是针对中国的挑衅#:俄罗斯总统普京16日在第十届莫斯科国际安全会议上发表讲话时指出，美国国会众议长佩洛西窜访中国台湾地区是一次精心策划的挑衅。普京说，美国再次蓄意火上浇油，使亚太地区局势复杂化。美国针对台湾的冒险行为不仅是某个不负责任政客的窜访，而是美国有目的、有意识破坏和扰乱地区及全球局势稳定的战略的一部分，是对他国主权和本国国际义务的蔑视。普京表示，西方集团正试图把类似北约的体系扩展到亚太地区，形成具有侵略性的军事政治联盟，如美英澳三边安全伙伴关系协定等。他表示，除此之外，西方正试图转移本国民众的注意力，将生活水平下降、失业、贫困等自身社会经济问题归咎于俄罗斯和中国等国家。\n -------------------------- \n 前序事件:\n 1)解放军全程跟踪迫使佩洛西专机绕道菲律宾\n 2)解放军空军苏-35战机穿越台湾海峡 \n 3)东部战区组织环台岛战备警巡",
+      "佩洛西到哪了 \n -------------------------- \n 前序事件: \n 1)华春莹称中国身后是160多个国家 \n 2)佩洛西到哪了 \n 3)佩洛西访台纯粹是对中国的挑衅",
+      "#外交部回应佩洛西最新涉台言论#:美国众议院议长佩洛西等参与亚洲之行的美议员日前举行记者会，佩洛西在会上公然声称“台湾是世界上最自由的国家之一”。她同时称此访事关台湾的民主，符合美国政府一贯的“一中政策”，并未寻求改变台海现状。对此，中国外交部发言人汪文斌12日表示，佩洛西的言论进一步证明其窜访中国台湾地区是对“台独”分裂势力的纵容支持。\n -------------------------- \n  前序事件: \n 1)台海局势观察 \n 2)武统 \n 3)佩洛西到哪了",
+      "#台湾网友吐槽台当局赢了嘴炮苦了人民#:美国国会众议长佩洛西窜访台湾，严重挑衅了一个中国原则，向“台独”势力传递了错误的信号，致使台海局势骤然升温。台湾《联合报》的社论指出，佩洛西利用“亚洲行”寻找自己最后的秀场，民进党当局不仅给她提供了最佳的表演舞台，还安排了“各种剧目”供她“演出”，结果就是让台湾人民受伤害。\n -------------------------- \n  前序事件: \n 1)国台办回应蔡英文为佩洛西授勋 \n 2)台海局势观察 \n 3)佩洛西到哪了",
+      "#王毅称佩洛西窜台是彻头彻尾的政治闹剧#:当地时间8月3日，中国国务委员兼外长王毅在柬埔寨出席东盟外长会时表示，美国国会众议长佩洛西窜访中国台湾地区是一场“彻头彻尾的闹剧”。玩火者绝对没有好下场，犯我中华者必将受到惩处。 \n -------------------------- \n  前序事件:\n 1)佩洛西窜访台湾六宗罪 \n 2)国防部回应取消中美两军三项交往活动 \n 3)台湾人民吐槽当局赢了嘴炮苦了人民",
+
+      "#佩洛西窜访后台海进入新常态# \n -------------------------- \n 前序事件: \n 1)台海局势观察 \n 2)佩洛西丈夫在港公司或被列入国家制裁 \n 3)台湾网友吐槽台当局赢了嘴炮苦了人民"];
+
+
+      // 根据选项内容进行相应的操作
+      // 更新数据或选项等...
+
+       let selectedNodes = []
+       let selectedLinks = []
+
+
+
+      links_node.forEach(link => {
+
+      if (link.target === this.selectedNode) {
+        if (selectedNodes.indexOf(link.source) < 0) {
+          selectedNodes.push(data.find(item => item.id ===link.source))
+          selectedLinks.push({
+          source: data.find(item => item.id ===link.source).name,
+          target: data.find(item => item.id ===link.target).name,
+          value: link.weight
+          }
+          )
+        }
+      }
+    })
+    selectedNodes.push(data.find(item => item.id === this.selectedNode))
+    links_node.forEach(link => {
+
+      if (link.source === this.selectedNode) {
+        if (selectedNodes.indexOf(link.target) < 0) {
+          selectedNodes.push(data.find(item => item.id ===link.target))
+          selectedLinks.push({
+          source: data.find(item => item.id ===link.source).name,
+          target: data.find(item => item.id ===link.target).name,
+          value: link.weight
+          })
+        }
+      }
+    })
+
+   const centerX = this.chartInstance.getWidth() / 4;
+  const centerY = this.chartInstance.getHeight() / 2;
+  const layoutRadius = Math.min(centerX, centerY) / 2; // 假设布局半径为图表中心的一半
+  const xScaleFactor = 0.5;
+
+  let angleIncrement = (2 * Math.PI) / selectedNodes.length; // 为了均匀分布，对角度按节点数量分割
+
+  selectedNodes.forEach((node, idx) => {
+    if (node.id === selectedNodeID) {
+      // 如果节点是被选中的节点，则将它置于中心位置
+      node.x = centerX;
+      node.value = centerY;
+    } else {
+      // 其他节点按照环形布局排布
+      let angle = angleIncrement * idx; // 计算当前节点的角度
+      node.x = centerX + layoutRadius * Math.cos(angle)*xScaleFactor; // 通过角度和半径计算 x 坐标
+      node.value = centerY + layoutRadius * Math.sin(angle); // 通过角度和半径计算 y 坐标
+    }
+    node.fixed = true; // 将节点的位置固定
+  });
+
+    const links_new = selectedLinks.map(link => {
+  const sourceIndex = selectedNodes.findIndex(node => node.name === link.source);
+  const targetIndex = selectedNodes.findIndex(node => node.name === link.target);
+
+
+  return {
+    source: sourceIndex,
+    target: targetIndex,
+    value: link.weight
+  };
+});
+
+
+      // 重新绘制图表
+      var options = {
+           title: {
+             text: ''
+
+           },
+
+           xAxis: {
+               type: 'category',
+               boundaryGap: false,
+
+               show:false
+             },
+           yAxis: {
+               type: 'value',
+               show:false
+            },
+
+            series: [
+    {
+      type: 'graph',
+      layout: 'none',
+      coordinateSystem: 'cartesian2d',
+      symbolSize: 10,
+
+      label: {
+        show: true,
+         position: 'right',
+         color: '#000',
+         fontSize: 12,
+
+      },
+      edgeSymbol: ['circle', 'arrow'],
+      edgeSymbolSize: [4, 10],
+      data: selectedNodes,
+      links: links_new,
+      lineStyle: {
+        color: '#2f4554'
+      },
+
+      itemStyle: {
+      color: function(params) {
+        // 根据节点索引设置不同的颜色
+        var colors = ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#ffff00', '#00ffff', '#ff8000', '#8000ff', '#00ff80', '#ff0080', '#80ff00', '#0080ff', '#ff80ff', '#ff0080', '#ffff80', '#80ffff', '#8000ff', '#0080ff', '#80ff00', '#ff8000', '#00ffff', '#ffff00', '#00ff00', '#ff0000', '#ff00ff'];
+        return colors[params.dataIndex % colors.length];
+      }
+    },
+    }]
+    }
+      this.chartInstance.setOption(options,true);
+
+      const nodeIndex = data.findIndex(item => item.id === nodeId);
+      if (nodeIndex >= 0) {
+        var nodeDescription = nodeDescriptions[nodeIndex];
+        document.getElementById("node-description").innerText = nodeDescription;
+      }
+
+
+
+    },
+
+
+
+
+
+
+
+
+
 
 
       handleSubmit() {
@@ -1168,6 +1763,8 @@
       },
     },
   };
+
+
 </script>
 <style lang="scss" scoped>
   .pay-button-group {
@@ -1176,6 +1773,11 @@
     text-align: center;
   }
 </style>
+
+
+
+
+
 
 
 

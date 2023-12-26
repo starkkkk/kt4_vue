@@ -227,7 +227,7 @@
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px">
                       </div>
                     <el-row>
-                    <h2 class="mt-25 mb-25">关键微博</h2>
+                      <h3 class="mt-25 mb-25">关键微博</h3>
                     </el-row>
                     <el-table :data = "weibo1" border class = "data_table">
                       <el-table-column prop="id" label="微博id" width="150">
@@ -238,10 +238,8 @@
                       </el-table-column>
                     </el-table>
                     <span class="mt-25 mb-25" style="font-size: 16px; line-height: 34px">
-                      <b>{{ value1 }}</b>事件的未来关键性人物Top20
+                      <h3 class="mt-25 mb-25"><b>{{ value1 }}</b>事件的未来关键性人物Top20</h3>
                     </span>
-                    <br />
-                    <br />
 
                     <el-table :data="json_user11" border class="data_table">
                       <el-table-column prop="nickname" label="头像" width="80">
@@ -276,7 +274,7 @@
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px">
                       </div>
                     <el-row>
-                    <h2 class="mt-25 mb-25">关键微博</h2>
+                      <h3 class="mt-25 mb-25">关键微博</h3>
                     </el-row>
                     <el-table :data = "weibo2" border class = "data_table">
                       <el-table-column prop="id" label="微博id" width="150">
@@ -287,10 +285,9 @@
                       </el-table-column>
                     </el-table>
                     <span class="mt-25 mb-25" style="font-size: 16px; line-height: 34px">
-                      <b>{{ value1 }}</b>事件的未来关键性人物Top20
+                      <h3 class="mt-25 mb-25"><b>{{ value1 }}</b>事件的未来关键性人物Top20</h3>
                     </span>
-                    <br />
-                    <br />
+
                     <el-table :data="json_user12" border class="data_table">
                       <el-table-column prop="nickname" label="头像" width="80">
                         <template slot-scope="scope">
@@ -323,8 +320,9 @@
                     <div id="Pelosi3" style="width: 1200px; height: 600px;
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px">
                       </div>
+
                     <el-row>
-                    <h2 class="mt-25 mb-25">关键微博</h2>
+                      <h3 class="mt-25 mb-25">关键微博</h3>
                     </el-row>
                     <el-table :data = "weibo3" border class = "data_table">
                       <el-table-column prop="id" label="微博id" width="150">
@@ -334,11 +332,12 @@
                       <el-table-column prop="link" label="微博链接" width="400">
                       </el-table-column>
                     </el-table>
+
                     <span class="mt-25 mb-25" style="font-size: 16px; line-height: 34px">
-                      <b>{{ value1 }}</b>事件的未来关键性人物Top20
+                      <h3 class="mt-25 mb-25"><b>{{ value1 }}</b>事件的未来关键性人物Top20</h3>
                     </span>
-                    <br />
-                    <br />
+
+
                     <el-table :data="json_user13" border class="data_table">
                       <el-table-column prop="nickname" label="头像" width="80">
                         <template slot-scope="scope">
@@ -372,7 +371,7 @@
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px">
                       </div>
                     <el-row>
-                    <h2 class="mt-25 mb-25">关键微博</h2>
+                      <h3 class="mt-25 mb-25">关键微博</h3>
                     </el-row>
                     <el-table :data = "weibo4" border class = "data_table">
                       <el-table-column prop="id" label="微博id" width="150">
@@ -383,10 +382,9 @@
                       </el-table-column>
                     </el-table>
                     <span class="mt-25 mb-25" style="font-size: 16px; line-height: 34px">
-                      <b>{{ value1 }}</b>事件的未来关键性人物Top20
+                      <h3 class="mt-25 mb-25"><b>{{ value1 }}</b>事件的未来关键性人物Top20</h3>
                     </span>
-                    <br />
-                    <br />
+
                     <el-table :data="json_user14" border class="data_table">
                       <el-table-column prop="nickname" label="头像" width="80">
                         <template slot-scope="scope">
@@ -709,17 +707,17 @@ export default {
 
       // '佩洛西窜访台湾六宗罪'
       json_user11:
-        [{'role': '思考者','importance': 0.16, 'avatar':'null', 'nickname': '央视新闻', 'gender': 'null', 'location': '北京', 'description': '无', 'verified_reason': '中央广播电视总台央视新闻官方账号', 'tag': '佩洛西 挑衅 台湾 访问 乘专机 亮剑 台北 危险 解放军 起飞 专机 访台 战区 抵达 军队 东部 此前 行程 美军 '},
+        [{'role': '思考者','importance': 0.16, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.600.600.180/002TLsr9ly8hij42qizurj60go0gowfl02.jpg?KID=imgbed,tva&Expires=1703593434&ssig=fqbJLTYuBM', 'nickname': '央视新闻', 'gender': 'null', 'location': '北京', 'description': '无', 'verified_reason': '中央广播电视总台央视新闻官方账号', 'tag': '佩洛西 挑衅 台湾 访问 乘专机 亮剑 台北 危险 解放军 起飞 专机 访台 战区 抵达 军队 东部 此前 行程 美军 '},
           {'role': '思考者','importance': 0.10, 'avatar': 'https://tvax1.sinaimg.cn/crop.0.0.708.708.180/607a4642ly8gx6hyphv4mj20jo0joq44.jpg?KID=imgbed,tva&Expires=1703146727&ssig=EmdSPtIkcV', 'nickname': '新时代中国外交思想库', 'gender': '男', 'location': '北京', 'description': '从这里，读懂新时代中国', 'verified_reason': '“习近平外交思想和新时代中国外交”专题网站官方微博', 'tag': '中方 美方 佩洛西 台湾 王毅 原则 外长 非洲 美国 倡议 维护 东盟 支持 议长 和平 台海 稳定 日方 立场 联合国 '},
-          {'role': '情绪者','importance': 0.07, 'avatar':'null', 'nickname': '烫金真爱册', 'gender': '女', 'location': '海外 法国', 'description': '那些有趣的事儿 合作请私信', 'verified_reason': '海外资讯博主（法国）http://t.cn/RqC5luA 微博译制视频博主 头条文章作者', 'tag': '佩洛西 法国 台媒称 若佩洛西敢 台湾 拭目以待 降落 旅行 班机 台媒 警方 老巫婆 证实 乘专机 美食 曝光 行程 双胞胎 台湾省 二创 '},
-          {'role': '情绪者','importance': 0.06, 'avatar':'null', 'nickname': '小狗斯特', 'gender': '男', 'location': '福建', 'description': '所发言论与供职单位无关。', 'verified_reason': '视频号娱乐明星榜第12名', 'tag': '台湾 连线 抵近 解放军 海岸线 演训 照片 记者 岛上 中国人民解放军 厦门 射击 火炮 夜间 战鹰 六宗 地图 台军方 东引岛 百姓 '},
+          {'role': '情绪者','importance': 0.07, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/0079UAaply8gxvo8joc7vj30u00u0jtq.jpg?KID=imgbed,tva&Expires=1703593446&ssig=3KjzySUxB2', 'nickname': '烫金真爱册', 'gender': '女', 'location': '海外 法国', 'description': '那些有趣的事儿 合作请私信', 'verified_reason': '海外资讯博主（法国）http://t.cn/RqC5luA 微博译制视频博主 头条文章作者', 'tag': '佩洛西 法国 台媒称 若佩洛西敢 台湾 拭目以待 降落 旅行 班机 台媒 警方 老巫婆 证实 乘专机 美食 曝光 行程 双胞胎 台湾省 二创 '},
+          {'role': '情绪者','importance': 0.06, 'avatar':'https://tvax4.sinaimg.cn/crop.0.0.1080.1080.180/0070IZ7ply8gm0kj0j18rj30u00u0gmu.jpg?KID=imgbed,tva&Expires=1703593457&ssig=V3yAx%2FcOma', 'nickname': '小狗斯特', 'gender': '男', 'location': '福建', 'description': '所发言论与供职单位无关。', 'verified_reason': '视频号娱乐明星榜第12名', 'tag': '台湾 连线 抵近 解放军 海岸线 演训 照片 记者 岛上 中国人民解放军 厦门 射击 火炮 夜间 战鹰 六宗 地图 台军方 东引岛 百姓 '},
           {'role': '吁请者','importance': 0.05, 'avatar':'https://tvax1.sinaimg.cn/crop.6.10.170.170.180/0089ZFLSly8h8uz6i4f7yj3050050dfu.jpg?KID=imgbed,tva&Expires=1703148290&ssig=hG6mk2KayN', 'nickname': '大公文匯網', 'gender': '男', 'location': '香港 南区', 'description': '香港大公文匯傳媒集團官方微博', 'verified_reason': '香港大公文匯傳媒集團官方微博', 'tag': '佩洛西 网页 链接 战区 地图 台岛 香港 台湾 雪糕 制裁 三亚 外交部 东部 日本 疫情 今日 演训 周边 台湾省 解放军 '},
           {'role': '吁请者','importance': 0.04, 'avatar':'https://tvax2.sinaimg.cn/crop.16.10.573.573.180/9ce4bf2fly8h8uzfycs3lj20go0got9t.jpg?KID=imgbed,tva&Expires=1703148306&ssig=K9XNc5EsuH', 'nickname': '香港文匯網', 'gender': '男', 'location': '广东 深圳', 'description': '立足香港 背靠祖國 輻射海外', 'verified_reason': '香港文匯網官方微博', 'tag': '佩洛西 台湾 演训 台岛 战区 解放军 香港 中方 台海 东部 实战 个案 抵近 容海恩 实弹射击 空域 确诊 海岸线 袁弓 联合 '},
           {'role': '思考者','importance': 0.04, 'avatar':'https://tvax4.sinaimg.cn/crop.0.0.180.180.180/003z5L7fly8h8ursf868gj6050050mwz02.jpg?KID=imgbed,tva&Expires=1703148318&ssig=I71oeLjbE7', 'nickname': '央视网', 'gender': '男', 'location': '北京', 'description': '合作请联系邮箱292768042@qq.com', 'verified_reason': '央视国际网络有限公司', 'tag': '演训 佩洛西 战区 解放军 台岛 紫外线 东部 台湾 美国 台独 猴痘 海事局 反制 央视网 实战 实弹射击 福岛 我军 海岸线 美方 '},
           {'role': '情绪者','importance': 0.04, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.1080.1080.180/3be4da3fly8hkt5bd1o61j20u00u0mye.jpg?KID=imgbed,tva&Expires=1703148333&ssig=cgOk0lrQ0w', 'nickname': '奶霸知道', 'gender': '男', 'location': '其他', 'description': '', 'verified_reason': '知名母婴育儿博主 乳品行业资深观察人员', 'tag': '参观 乳制品 奶粉 小西 牛奶 武器库 战士 路费 网页 粉丝 乳业 链接 记者 伪军 问问 海南 国内 图二 六宗 三天 '},
           {'role': '情绪者','importance': 0.04, 'avatar':'https://tvax1.sinaimg.cn/crop.0.0.600.600.180/0024h2kbly8h8uzc3xjzvj60go0gomxa02.jpg?KID=imgbed,tva&Expires=1703148344&ssig=S6A6vyvgf9', 'nickname': '大公報-大公網', 'gender': '男', 'location': '香港 其他', 'description': '创办于1902年，传承120年的华文媒体。', 'verified_reason': '大公网官方微博', 'tag': '个案 特朗普 香港 台湾 台独 疫情 确诊 美国 大公 新冠 佩洛西 中方 日本 台海 FBI 民进党 民众 文汇 汪文斌 靖国神社 '},
           {'role': '思考者','importance': 0.04, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.532.532.180/001Yekw6ly8h8vgesghzyj60es0esaae02.jpg?KID=imgbed,tva&Expires=1703148363&ssig=paft3p59oq', 'nickname': '凤凰网视频', 'gender': '女', 'location': '北京', 'description': '请关注我们的官方微信【凤凰网视频】解锁更多的精彩内容。你今天真好看——好看是现场，好看是多元，是身临其境，是体验的延伸，是不一样的生活。但是，凤凰视频一万种好看，不如你好看。', 'verified_reason': '凤凰网视频官方微博', 'tag': '佩洛西 台湾 专机 访台 台海 酒店 凤凰 民众 航班信息 美众议院 乘专机 访问 FlightRadar 博主 议长 观察团 抗议 起飞 此前 政客 '},
-          {'role': '思考者','importance': 0.04, 'avatar':'null', 'nickname': '麦克斯今天不营业', 'gender': '女', 'location': '上海', 'description': '知名娱乐博主', 'verified_reason': 'V指数 娱评69.72分', 'tag': '演训 佩洛西 战区 台岛 解放军 列车 东部 实战 台湾 云南 伤员 丽江 周边 美方 联合 中方 外交部 并蒂莲 空域 方志敏 '},
+          {'role': '思考者','importance': 0.04, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.512.512.180/0067j6dFly8gbo6zzsha1j30e80e83z6.jpg?KID=imgbed,tva&Expires=1703593469&ssig=iuAiP1DDN8', 'nickname': '麦克斯今天不营业', 'gender': '女', 'location': '上海', 'description': '知名娱乐博主', 'verified_reason': 'V指数 娱评69.72分', 'tag': '演训 佩洛西 战区 台岛 解放军 列车 东部 实战 台湾 云南 伤员 丽江 周边 美方 联合 中方 外交部 并蒂莲 空域 方志敏 '},
           {'role': '情绪者','importance': 0.04, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/007YQvE6ly8h4pbl6g9zrj30u00u0adf.jpg?KID=imgbed,tva&Expires=1703148389&ssig=%2Fm6fBzkU6a', 'nickname': '疾风中青勁草', 'gender': '男', 'location': '香港', 'description': '此乃個人微博号，所發表之意見僅代表博主個人立場，並不代表任何組織和機構！不喜勿关，随便取关！', 'verified_reason': '互联网资讯博主', 'tag': '佩洛西 中青勁 疾风 香港 台湾 疫情 還是 防控 一個 解放军 专机 访台 真的 台独 特朗普 马来西亚 乘专机 内地 推特 支持 '},
           {'role': '情绪者','importance': 0.03, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.420.420.180/00890Bjnly8gzrj548xbpj30bo0bo0sq.jpg?KID=imgbed,tva&Expires=1703148402&ssig=VBCakb8GZu', 'nickname': 'WS偏执狂', 'gender': '男', 'location': '北京', 'description': '呵呵哒', 'verified_reason': '微博原创视频博主', 'tag': '偏执狂 WS 解放军 特朗普 台海 台湾 演训 加前 里根 后缀 航母 FBI 掉头 中方 庄园 从军 美军 行驶 年轻人 佩洛西 '},
           {'role': '思考者','importance': 0.03, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.842.842.180/7bf67cf4ly8h8vgnxn0b4j20ne0ne0tu.jpg?KID=imgbed,tva&Expires=1703148416&ssig=Ysy%2B2rQEVS', 'nickname': '辽宁共青团', 'gender': '男', 'location': '辽宁', 'description': '中国共产主义青年团（简称共青团）是中国共产党领导的先进青年群众组织，是广大青年在实践中学习共产主义的学校，是中国共产党的助手和后备军。共青…', 'verified_reason': '共青团辽宁省委员会官方微博', 'tag': '共青团 辽宁 环球网 战区 台湾 天眼 团子 外交部 观察者 演训 团团 航母 美海军 新闻 中方 正告 美方 先敌 佩洛西 军演 '},
@@ -737,11 +735,11 @@ export default {
           {'role': '情绪者','importance': 0.1, 'avatar':'https://tva1.sinaimg.cn/crop.0.0.750.750.180/3e084d3cjw8ewtvbjiswtj20ku0kvq4b.jpg?KID=imgbed,tva&Expires=1703148486&ssig=n1qdb4M0%2Fz', 'nickname': '武汉金晓', 'gender': '男', 'location': '湖北', 'description': '一枚心系社会的武汉人。', 'verified_reason': '武汉博主', 'tag': '佩洛西 挑衅 台湾 访问 乘专机 亮剑 台北 危险 解放军 起飞 专机 访台 战区 Twitter 抵达 军队 东部 此前 行程 美军 '},
           {'role': '情绪者','importance': 0.08, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.512.512.180/006Tw3cBly8h8vgpo2liej30e80e874v.jpg?KID=imgbed,tva&Expires=1703148456&ssig=cE1s69yhOD', 'nickname': '爱国青年刘战神', 'gender': '男', 'location': '其他', 'description': '反美斗士，不倒战神——刘战神', 'verified_reason': '互联网科技博主 微博原创视频博主', 'tag': '佩洛西 台湾 解放军 台媒称 降落 班机 警方 证实 台媒 抵近 台北 战神 乘专机 起飞 专机 爱国 决心 海岸线 维护 目的地 '},
           {'role': '思考者','importance': 0.08, 'avatar': 'https://tvax1.sinaimg.cn/crop.0.0.708.708.180/607a4642ly8gx6hyphv4mj20jo0joq44.jpg?KID=imgbed,tva&Expires=1703146727&ssig=EmdSPtIkcV', 'nickname': '新时代中国外交思想库', 'gender': '男', 'location': '北京', 'description': '从这里，读懂新时代中国', 'verified_reason': '“习近平外交思想和新时代中国外交”专题网站官方微博', 'tag': '中方 美方 佩洛西 台湾 王毅 原则 外长 非洲 美国 倡议 维护 东盟 支持 议长 和平 台海 稳定 日方 立场 联合国 '},
-          {'role': '吁请者','importance': 0.08, 'avatar':'null', 'nickname': 'Chongsan冲先生', 'gender': '男', 'location': '云南', 'description': 'YouTube: Chong San 沖先生, BiliBili: ChongSan沖先生', 'verified_reason': '视频累计播放量6518.4万', 'tag': '演训 佩洛西 战区 台岛 解放军 列车 东部 实战 台湾 云南 伤员 丽江 周边 美方 联合 中方 外交部 并蒂莲 空域 方志敏 '},
+          {'role': '吁请者','importance': 0.08, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/007ZSgsUly8gw4kciibcyj30u00u03yy.jpg?KID=imgbed,tva&Expires=1703593400&ssig=3vPvhTt6wz', 'nickname': 'Chongsan冲先生', 'gender': '男', 'location': '云南', 'description': 'YouTube: Chong San 沖先生, BiliBili: ChongSan沖先生', 'verified_reason': '视频累计播放量6518.4万', 'tag': '演训 佩洛西 战区 台岛 解放军 列车 东部 实战 台湾 云南 伤员 丽江 周边 美方 联合 中方 外交部 并蒂莲 空域 方志敏 '},
           {'role': '吁请者','importance': 0.08, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.1024.1024.180/8a77b89aly8h3qiql5667j20sg0sgdib.jpg?KID=imgbed,tva&Expires=1703148501&ssig=D0RRJmfP5U', 'nickname': '法国漂', 'gender': '女', 'location': '海外 法国', 'description': '那些有趣的事儿 合作请私信', 'verified_reason': '海外资讯博主（法国）http://t.cn/RqC5luA 微博译制视频博主 头条文章作者', 'tag': '佩洛西 法国 台媒称 若佩洛西敢 台湾 拭目以待 降落 旅行 班机 台媒 警方 老巫婆 证实 乘专机 美食 曝光 行程 双胞胎 台湾省 二创 '},
           {'role': '思考者','importance': 0.07, 'avatar':'https://tvax3.sinaimg.cn/crop.0.0.842.842.180/7bf67cf4ly8h8vgnxn0b4j20ne0ne0tu.jpg?KID=imgbed,tva&Expires=1703148416&ssig=Ysy%2B2rQEVS', 'nickname': '辽宁共青团', 'gender': '男', 'location': '辽宁', 'description': '中国共产主义青年团（简称共青团）是中国共产党领导的先进青年群众组织，是广大青年在实践中学习共产主义的学校，是中国共产党的助手和后备军。共青…', 'verified_reason': '共青团辽宁省委员会官方微博', 'tag': '共青团 辽宁 环球网 战区 台湾 天眼 团子 外交部 观察者 演训 团团 航母 美海军 新闻 中方 正告 美方 先敌 佩洛西 军演 '},
           {'role': '吁请者','importance': 0.07, 'avatar':'https://tvax1.sinaimg.cn/crop.6.10.170.170.180/0089ZFLSly8h8uz6i4f7yj3050050dfu.jpg?KID=imgbed,tva&Expires=1703148290&ssig=hG6mk2KayN', 'nickname': '大公文匯網', 'gender': '男', 'location': '香港 南区', 'description': '香港大公文匯傳媒集團官方微博', 'verified_reason': '香港大公文匯傳媒集團官方微博', 'tag': '佩洛西 网页 链接 战区 地图 台岛 香港 台湾 雪糕 制裁 三亚 外交部 东部 日本 疫情 今日 演训 周边 台湾省 解放军 '},
-          {'role': '思考者','importance': 0.07, 'avatar':'null', 'nickname': '无心简影', 'gender': '男', 'location': '上海 徐汇区', 'description': '时事视频博主', 'verified_reason': '超话主持人（最爱文艺片超话）', 'tag': '暗面 sunny 疫情 防控 上海 新冠 新闻发布会 肺炎 台湾 上海市 核酸 转载 全员 配音 特辑 无症状 佩洛西 闵行 宝岛 筛查 '},
+          {'role': '思考者','importance': 0.07, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/0064BRSPly8g0cfvaho4dj30u00u0dgz.jpg?KID=imgbed,tva&Expires=1703593418&ssig=Bs3tU%2BpZlu', 'nickname': '无心简影', 'gender': '男', 'location': '上海 徐汇区', 'description': '时事视频博主', 'verified_reason': '超话主持人（最爱文艺片超话）', 'tag': '暗面 sunny 疫情 防控 上海 新冠 新闻发布会 肺炎 台湾 上海市 核酸 转载 全员 配音 特辑 无症状 佩洛西 闵行 宝岛 筛查 '},
           {'role': '思考者','importance': 0.06, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.532.532.180/001Yekw6ly8h8vgesghzyj60es0esaae02.jpg?KID=imgbed,tva&Expires=1703148363&ssig=paft3p59oq', 'nickname': '凤凰网视频', 'gender': '女', 'location': '北京', 'description': '请关注我们的官方微信【凤凰网视频】解锁更多的精彩内容。你今天真好看——好看是现场，好看是多元，是身临其境，是体验的延伸，是不一样的生活。但是，凤凰视频一万种好看，不如你好看。', 'verified_reason': '凤凰网视频官方微博', 'tag': '佩洛西 台湾 专机 访台 台海 酒店 凤凰 民众 航班信息 美众议院 乘专机 访问 FlightRadar 博主 议长 观察团 抗议 起飞 此前 政客 '},
           {'role': '吁请者','importance': 0.05, 'avatar':'https://tvax1.sinaimg.cn/crop.0.0.1080.1080.180/725ba55bly8gzmyec5h1zj20u00u0tbd.jpg?KID=imgbed,tva&Expires=1703149004&ssig=ZPhMjr0jxv', 'nickname': '嘉良刘', 'gender': '男', 'location': '北京', 'description': '文化产业民工！努力不一定有结果，但是不努力一定没结果！', 'verified_reason': '北京达意美施国际文化传媒有限公司总经理 音乐博主', 'tag': '佩洛西 嘉良 乘专机 外媒称 越线 感受一下 决不允许 目击 挑衅 阅兵 装甲车 战区 战车 起飞 厦门 东风 中方 访问 表态 海岸 '},
           {'role': '吁请者','importance': 0.05, 'avatar':'https://tvax2.sinaimg.cn/crop.0.0.1080.1080.180/007YQvE6ly8h4pbl6g9zrj30u00u0adf.jpg?KID=imgbed,tva&Expires=1703148389&ssig=%2Fm6fBzkU6a', 'nickname': '疾风中青勁草', 'gender': '男', 'location': '香港', 'description': '此乃個人微博号，所發表之意見僅代表博主個人立場，並不代表任何組織和機構！不喜勿关，随便取关！', 'verified_reason': '互联网资讯博主', 'tag': '佩洛西 中青勁 疾风 香港 台湾 疫情 還是 防控 一個 解放军 专机 访台 真的 台独 特朗普 马来西亚 乘专机 内地 推特 支持 '},
@@ -28703,7 +28701,7 @@ export default {
           {
             show: true,
             // text: '\u5173\u952e\u4eba\u7269\u4f20\u64ad\u8def\u5f84',
-            text: '关键微博关键人物传播路径建模',
+            text: '',
             target: 'blank',
             subtarget: 'blank',
             padding: 5,

@@ -5,6 +5,5 @@
 "/static/ico/{}.jpg".format(id)
 ## 插入语法
 其中，picture属性指向路径字符串
-> <template slot-scope="scope">
->   <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>{{scope.row.column2}}
-> </template>
+> <img :src="scope.row.picture" style="height: 40px;border-radius: 50%;object-position: center;"/>
+

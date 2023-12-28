@@ -279,6 +279,7 @@
                           style="width: 1200px; height: 600px;
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px"
            ></div>
+
            </el-row>
 
               <h2> 事件因果关系图</h2>
@@ -290,6 +291,7 @@
                           style="width: 1200px; height: 600px;
                           margin-top: 0px;margin-bottom: 0px;margin-right: 0px"
            ></div>
+
            </el-row>
 
                 </el-col>
@@ -349,12 +351,9 @@
                       <el-table :data="tableData_" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
-                      </el-table>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
+                         </el-table>
                     </el-col>
                   </template>
                   <template v-if="selectedScene2 === '佩洛西窜访台湾六宗罪'">
@@ -363,12 +362,9 @@
 
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
-                      </el-table>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
+                         </el-table>
                     </el-col>
                   </template>
 
@@ -377,12 +373,9 @@
                         <el-table :data="tableData_keyuser_pelosi2" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
-                        </el-table>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
+                         </el-table>
                       </el-col>
                     </template>
                     <template v-if="selectedScene2 === '佩洛西访问台湾是危险的挑衅行为'">
@@ -390,11 +383,8 @@
                         <el-table :data="tableData_keyuser_pelosi3" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -404,11 +394,8 @@
                         <el-table :data="tableData_keyuser_pelosi4" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -418,11 +405,8 @@
                         <el-table :data="tableData_keyuser_pelosi5" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -432,11 +416,8 @@
                         <el-table :data="tableData_keyuser_pelosi6" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -446,11 +427,8 @@
                         <el-table :data="tableData_keyuser_pelosi7" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -460,11 +438,8 @@
                         <el-table :data="tableData_keyuser_pelosi8" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -474,11 +449,8 @@
                         <el-table :data="tableData_keyuser_pelosi9" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -490,11 +462,8 @@
                         <el-table :data="tableData_keyuser_pelosi10" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -504,11 +473,8 @@
                         <el-table :data="tableData_keyuser_pelosi11" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -518,11 +484,8 @@
                         <el-table :data="tableData_keyuser_pelosi12" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -534,11 +497,8 @@
                         <el-table :data="tableData_keyuser_pelosi13" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -548,11 +508,8 @@
                         <el-table :data="tableData_keyuser_pelosi14" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -562,11 +519,8 @@
                         <el-table :data="tableData_keyuser_pelosi15" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -576,11 +530,8 @@
                         <el-table :data="tableData_keyuser_pelosi16" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -604,11 +555,8 @@
                         <el-table :data="tableData_keyuser_pelosi18" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -618,11 +566,8 @@
                         <el-table :data="tableData_keyuser_pelosi19" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -632,11 +577,8 @@
                         <el-table :data="tableData_keyuser_pelosi20" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -646,11 +588,8 @@
                         <el-table :data="tableData_keyuser_pelosi21" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -660,11 +599,8 @@
                         <el-table :data="tableData_keyuser_pelosi22" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -676,11 +612,8 @@
                         <el-table :data="tableData_keyuser_pelosi23" style="width: 85%" border>
                         <el-table-column prop="column2" label="用户昵称" width="100"></el-table-column>
                         <el-table-column prop="column3" label="关键博文" width="800"></el-table-column>
-                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
-                        <el-table-column prop="column5" label="转发数" width="80"></el-table-column>
-                        <el-table-column prop="column6" label="评论数" width="80"></el-table-column>
-                        <el-table-column prop="column7" label="点赞数" width="80"></el-table-column>
                         <el-table-column prop="column8" label="微博类别" width="80"></el-table-column>
+                        <el-table-column prop="column4" label="情感分析" width="80"></el-table-column>
                         </el-table>
                       </el-col>
                     </template>
@@ -800,6 +733,7 @@
 <script>
 
  import tableData from './tableData_output_new.json';
+ import links from './links.json'
 
 
   import echarts from 'echarts';
@@ -822,6 +756,9 @@
       "中国驻美大使秦刚表示美方在台湾问题上应遵守契约精神","东部战区组织环台岛战备警巡","美官方忧中国对佩洛西访台设禁飞区","解放军在台岛以东设靶逼退里根号","特朗普称佩洛西窜台是在帮中国圆梦",
       "台海局势观察","华春莹称中国身后是160多个国家","佩洛西丈夫在港公司或被列入国家制裁","武统","佩洛西访台纯粹是针对中国的挑衅","佩洛西到哪了","外交部回应佩洛西最新涉台言论","台湾网友吐槽台当局\n赢了嘴炮苦了人民","王毅称佩洛西窜台\n是彻头彻尾的政治闹剧",
       "佩洛西窜访后\n台海进入新常态"],
+
+
+
 
        nodes_data:[
 			{"name": "佩洛西窜访台湾六宗罪", "value":"250"},
@@ -946,6 +883,8 @@
           { column1: '王毅称佩洛西窜台是彻头彻尾的政治闹剧', column2: '17'},
           { column1: '佩洛西窜访后台海进入新常态', column2: '15'},
         ],
+
+
          tableData_keyuser_pelosi1: tableData.tableData_keyuser_pelosi1,
          tableData_keyuser_pelosi2: tableData.tableData_keyuser_pelosi2,
          tableData_keyuser_pelosi3: tableData.tableData_keyuser_pelosi3,
@@ -1204,81 +1143,7 @@
       "#佩洛西窜访后台海进入新常态# \n -------------------------- \n 前序事件: \n 1)台海局势观察 \n 2)佩洛西丈夫在港公司或被列入国家制裁 \n 3)台湾网友吐槽台当局赢了嘴炮苦了人民"];
 
 
-     var option_2 = {
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      // Use axis to trigger tooltip
-      type: 'line' // 'shadow' as default; can also be 'line' or 'shadow'
-    }
-  },
-  legend: {},
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true
-  },
-  xAxis: {
-    type: 'value'
-  },
-  yAxis: {
-    type: 'category',
-    data: axisData,
-  },
-  series: [
-    {
-      name: '消极',
-      type: 'bar',
-      stack: 'total',
-      label: {
-        show: true,
-         formatter: (params) => {
-        const percentage = (params.value);
-        return `${percentage}%`;
-      }
-      },
-      emphasis: {
-        focus: 'series',
 
-      },
-      data: [30, 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30]
-    },
-    {
-      name: '中性',
-      type: 'bar',
-      stack: 'total',
-      label: {
-        show: true,
-        formatter: (params) => {
-        const percentage = (params.value);
-        return `${percentage}%`;
-      }
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: [40, 40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40]
-    },
-    {
-      name: '积极',
-      type: 'bar',
-      stack: 'total',
-      label: {
-        show: true,
-        formatter: (params) => {
-        const percentage = (params.value);
-        return `${percentage}%`;
-      }
-      },
-      emphasis: {
-        focus: 'series'
-      },
-      data: [30, 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30]
-    },
-
-  ]
-};
 
 
       var option = {
@@ -1379,9 +1244,9 @@
       radius: '50%',
       selectedMode: 'single',
       data: [
-        { value: 33.2, name: '消极' },
-        { value: 41.6, name: '中性' },
-        { value: 26.2, name: '积极' },
+        { id:0,value: 55.8, name: '消极' },
+        { id:1,value: 26.5, name: '中性' },
+        { id:2,value: 17.7, name: '积极' },
       ],
       emphasis: {
         itemStyle: {
@@ -1406,22 +1271,17 @@
 
 
      myChart_2.setOption(option_pie)
+     const pieDescriptions = ["消极的评价中主要观点为:","中性的评价中主要观点为:","积极的评价中主要观点为:"]
 
+     myChart_2.on('click', function(params) {
+     console.log(params.data.id);
+    var pieIndex = params.data.id;
+    var pieDescription = pieDescriptions[pieIndex];
+    document.getElementById("pie-description").innerText = pieDescription;
 
-
-     myChart.on('click', function(params) {
-  if (params.dataType === 'node') {
-    var nodeIndex = params.dataIndex;
-    var nodeDescription = nodeDescriptions[nodeIndex];
-    document.getElementById("node-description").innerText = nodeDescription;
-    document.getElementById("edge-description").innerText = ""; // 清空边描述
-  } else if (params.dataType === 'edge') {
-    var edgeIndex = params.dataIndex;
-    var edgeDescription = edgeDescriptions[edgeIndex];
-    document.getElementById("edge-description").innerText = edgeDescription;
-    document.getElementById("node-description").innerText = ""; // 清空节点描述
-  }
 });
+
+
 
       },
 
@@ -1493,7 +1353,10 @@
 
 		];
 
-       const links_node =  [
+		   const links_node = require('./links.json');
+       
+
+       const links_node_1 =  [
 			{'source': 16, 'target': 18, 'weight': 0.5196008261589741, 'edgeDescriptions': "source:武统[超话], target:佩洛西到哪了[超话], weight:0.5196008261589741"},
 {'source': 14, 'target': 18, 'weight': 0.37693564877349817, 'edgeDescriptions': 'source:华春莹称中国身后是160多个国家, target:佩洛西到哪了[超话], weight:0.37693564877349817'},
 {'source': 17, 'target': 18, 'weight': 0.02235052760056439, 'edgeDescriptions': 'source:佩洛西访台纯粹是针对中国的挑衅, target:佩洛西到哪了[超话], weight:0.02235052760056439'},
@@ -1561,8 +1424,9 @@
 
 		];
 
+    const nodeDescriptions = require('./node_description.json');
 
-		const nodeDescriptions = ["#佩洛西窜访台湾六宗罪#:首先就是佩洛西窜访台湾严重违反美方在中美三个联合公报中所作承诺，属于背信弃义。第二则是践踏了法制，佩洛西窜访台湾严重违反一个中国原则，这一原则是国际社会的普遍共识和公认的国际关系基本准则。第三就是破坏了区域和平，佩洛西窜台是美纵容支持“台独”分裂势力的最新例证，严重破坏台海和平和地区稳定，美国应该也必须为此负全部责任。第四则是佩洛西涉嫌干涉中国内政。第五则是佩洛西进行的政治操弄，佩洛西所作所为绝不是为了捍卫民主，而是打着“民主”的幌子，侵犯中国主权、破坏中国稳定、遏制中国发展，是赤裸裸的政治操弄。第六则是她以权谋私，佩洛西妄图借打“台湾牌”获得“政治加分”，留下所谓政治遗产。",
+		const nodeDescriptions_1 = ["#佩洛西窜访台湾六宗罪#:首先就是佩洛西窜访台湾严重违反美方在中美三个联合公报中所作承诺，属于背信弃义。第二则是践踏了法制，佩洛西窜访台湾严重违反一个中国原则，这一原则是国际社会的普遍共识和公认的国际关系基本准则。第三就是破坏了区域和平，佩洛西窜台是美纵容支持“台独”分裂势力的最新例证，严重破坏台海和平和地区稳定，美国应该也必须为此负全部责任。第四则是佩洛西涉嫌干涉中国内政。第五则是佩洛西进行的政治操弄，佩洛西所作所为绝不是为了捍卫民主，而是打着“民主”的幌子，侵犯中国主权、破坏中国稳定、遏制中国发展，是赤裸裸的政治操弄。第六则是她以权谋私，佩洛西妄图借打“台湾牌”获得“政治加分”，留下所谓政治遗产。",
 
 		"#解放军全程跟踪迫使佩洛西专机绕道菲律宾#:佩洛西专机起飞后，解放军全程跟踪监控，迫使佩洛西专机舍近求远，绕到菲律宾上空后再回到台湾松山机场\n -------------------------- \n 前序事件：\n 1)佩洛西窜访台湾六宗罪",
 		"安理会轮值主席、中国常驻联合国代表张军就安理会8月工作在纽约联合国总部向媒体吹风时，就台湾问题、美国众议长佩洛西访台表明立场。安理会轮值主席、中国常驻联合国代表张军就安理会8月工作在纽约联合国总部向媒体吹风时，就台湾问题、美国众议长佩洛西访台表明立场。\n -------------------------- \n 前序事件：\n 1)佩洛西窜访台湾六宗罪 \n 2)佩洛西访问台湾是危险的挑衅行为",
@@ -1721,6 +1585,16 @@
         var nodeDescription = nodeDescriptions[nodeIndex];
         document.getElementById("node-description").innerText = nodeDescription;
       }
+
+      function formatterHover(params){
+		    if (params.dataType === 'edge') {
+		          var weight = params.data.edgeDescriptions;
+              return weight;
+            } else {
+              return params.name;
+            }
+
+        };
 
 
 

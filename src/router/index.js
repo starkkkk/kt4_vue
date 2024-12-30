@@ -53,7 +53,56 @@ export const asyncRoutes = [
       },
     ],
   },
+{
+    path: "/GroupAction",
+    component: Layout,
+    redirect: "noRedirect",
+    name: "GroupAction",
+    meta: {
+      title: "群体行为理解与预测原型系统",
+      icon: "align-justify",
+      permissions: ["admin"],
+    },
 
+    children: [
+      {
+        path: "CauseInference",
+        name: "CauseInference",
+        component: () => import("@/views/GroupAction/CauseInference/index"),
+        meta: {
+          title: "网络用户群体行为溯因理解技术",
+          icon:"link",
+        },
+      },
+      {
+        path: "KeyUser",
+        name: "KeyUser",
+        component: () => import("@/views/GroupAction/KeyUser/index"),
+        meta: {
+          title: "群体行为中关键个体发现技术",
+          icon:"link",
+        },
+      },
+      {
+        path: "FutureKey",
+        name: "FutureKey",
+        component: () => import("@/views/GroupAction/FutureKey/index"),
+        meta: {
+          title: "群体行为中未来推手预测技术",
+          icon:"link",
+        },
+      },
+      {
+        path: "TrendPredict",
+        name: "TrendPredict",
+        component: () => import("@/views/GroupAction/TrendPredict/index"),
+        meta: {
+          title: "网络用户群体行为趋势预测技术",
+          icon:"link",
+        },
+      },
+    ],
+  },
   // {
   //   path: "/personnelManagement",
   //   component: Layout,
@@ -302,56 +351,7 @@ export const asyncRoutes = [
   //
   //   ],
   // },
-  {
-    path: "/GroupAction",
-    component: Layout,
-    redirect: "noRedirect",
-    name: "GroupAction",
-    meta: {
-      title: "基于因果推理的网络群体行为理解与预测技术",
-      icon: "align-justify",
-      permissions: ["admin"],
-    },
 
-    children: [
-      {
-        path: "CauseInference",
-        name: "CauseInference",
-        component: () => import("@/views/GroupAction/CauseInference/index"),
-        meta: {
-          title: "网络用户群体行为溯因理解技术",
-          icon:"link",
-        },
-      },
-      {
-        path: "KeyUser",
-        name: "KeyUser",
-        component: () => import("@/views/GroupAction/KeyUser/index"),
-        meta: {
-          title: "群体行为中关键个体发现技术",
-          icon:"link",
-        },
-      },
-      {
-        path: "FutureKey",
-        name: "FutureKey",
-        component: () => import("@/views/GroupAction/FutureKey/index"),
-        meta: {
-          title: "群体行为中未来关键性人物预测技术",
-          icon:"link",
-        },
-      },
-      {
-        path: "TrendPredict",
-        name: "TrendPredict",
-        component: () => import("@/views/GroupAction/TrendPredict/index"),
-        meta: {
-          title: "网络用户群体行为趋势预测技术",
-          icon:"link",
-        },
-      },
-    ],
-  },
   // {
   //   path: "/error",
   //   component: EmptyLayout,
